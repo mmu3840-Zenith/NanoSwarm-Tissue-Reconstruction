@@ -1,7 +1,7 @@
 import numpy as np
 
 class SwarmSystem:
-    def __init__(self, n_agents=50):
+    def __init__(self, n_agents=100):
         self.n_agents = n_agents
         self.agents = np.random.rand(n_agents, 2) * 60
 

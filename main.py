@@ -1,4 +1,9 @@
-from src.simulation.runner import run_simulation
+from src.swarm.swarm_engine import SwarmSystem
 
 if __name__ == "__main__":
-    run_simulation()
+    system = SwarmSystem(100)
+
+    for _ in range(200):
+        system.step()
+
+    print("Simulation complete")
