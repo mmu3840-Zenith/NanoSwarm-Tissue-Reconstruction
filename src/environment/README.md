@@ -1,4 +1,3 @@
-2D tissue environment:
-- grid-based damage model
-- pheromone diffusion system
-- dynamic repair field
+Tissue environment:
+- grid-based simulation
+- damage + pheromone fields

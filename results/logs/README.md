@@ -1,1 +1,3 @@
-Logs for simulation runs and performance tracking.
+Logs:
+- step-by-step simulation tracking
+- agent performance data

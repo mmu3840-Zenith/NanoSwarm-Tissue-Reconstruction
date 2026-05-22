@@ -1,1 +1,3 @@
-Implements pheromone-based communication for decentralized coordination.
+Swarm system:
+- pheromone diffusion
+- decentralized communication

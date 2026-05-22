@@ -1,8 +1,5 @@
-# Simulation Module
-
-Runs full system loop:
+Simulation module:
 - initializes environment
-- spawns nanobot agents
-- executes hybrid decision system
+- runs agent loop
 - updates pheromone + damage fields
-- tracks performance metrics in real time
+- collects metrics

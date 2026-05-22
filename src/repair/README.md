@@ -1,1 +1,3 @@
-Coordinates self-healing behavior across agents in damaged regions.
+Self-healing logic:
+- agent-based repair
+- pheromone reinforcement

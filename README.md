@@ -2,20 +2,30 @@
 
 ## Overview
 
-Nanomachine is a hybrid reinforcement learning and swarm intelligence system for spatial tissue repair simulation.
+Nanomachine is a hybrid multi-agent reinforcement learning system designed for spatial tissue repair.
+
+It combines:
+- Deep Q-Network (DQN)
+- Swarm intelligence (pheromone communication)
+- Greedy spatial optimization
+
+Agents operate in a 2D grid environment where they collaboratively repair damaged cells.
 
 ---
 
-## Key Idea
+## System Behavior
 
-Combines:
-- Deep Q-Learning (decision making)
-- Swarm pheromone communication
-- Greedy fallback stabilization
+Each agent:
+- perceives local environment state
+- selects actions using DQN or hybrid logic
+- moves in a 2D grid
+- repairs damaged tissue upon contact
+
+Swarm coordination is achieved through pheromone diffusion across the grid.
 
 ---
 
-## Results Summary
+## Experimental Results
 
 | System | 10 Agents | 50 Agents | 100 Agents |
 |--------|----------|----------|------------|
@@ -27,15 +37,25 @@ Combines:
 
 ## Key Findings
 
-- Hybrid achieves fastest convergence (21 steps)
-- Zero failure rate across all scales
-- Superior scalability vs baselines
+- Hybrid system achieves fastest convergence (21 steps)
+- Eliminates failure cases across all agent densities
+- Outperforms standalone greedy and swarm systems
 
 ---
 
-## Outputs
+## Project Structure
 
-- Convergence plots
-- Scaling graphs
-- Swarm animation
-- GitHub banner visualization
+Modular design includes:
+- agents (nanobot logic)
+- environment (tissue grid)
+- rl (DQN training system)
+- swarm (pheromone communication)
+- metrics (evaluation system)
+- experiments (scaling studies)
+- simulation (execution loop)
+
+---
+
+## Purpose
+
+This project explores emergent coordination in hybrid AI systems for distributed spatial optimization.

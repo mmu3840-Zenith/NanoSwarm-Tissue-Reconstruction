@@ -1,1 +1,4 @@
-Generated graphs and visual outputs.
+Figures include:
+- convergence plots
+- scaling graphs
+- failure rate comparisons

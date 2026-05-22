@@ -1,5 +1,3 @@
-Runs full simulation loop:
-- environment init
-- agent spawning
-- system execution
-- metrics tracking
+Simulation runner:
+- full system execution loop
+- environment + agents integration

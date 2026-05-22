@@ -1,4 +1,4 @@
-Nanobot agents use:
-- Deep Q-Network policy
-- swarm communication signals
-- greedy fallback logic
+Nanobot implementation:
+- position + velocity
+- hybrid decision system
+- local perception
