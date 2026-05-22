@@ -1,46 +1,14 @@
 # Nanomachine: Hybrid Multi-Agent Tissue Repair System
 
-## System Overview
+A hybrid simulation framework combining reinforcement learning and swarm intelligence for spatial tissue repair.
 
-A hybrid AI system combining:
-- Deep Q-Network (DQN)
-- Swarm pheromone communication
-- Greedy spatial optimization
+## Core Systems
+- DQN-based agent policy learning
+- Swarm pheromone communication layer
+- Greedy spatial optimization fallback
 
-Operates in a 2D dynamic tissue simulation environment.
+## Key Result
+Hybrid system achieves consistent 100% completion across all agent scales (10–100) with fastest convergence (21 steps).
 
----
-
-## Key Insight
-
-Hybrid intelligence solves:
-- scalability instability (greedy failure at low density)
-- slow convergence (swarm inefficiency)
-- poor generalization (single-policy RL systems)
-
----
-
-## Experimental Results
-
-Greedy:
-- unstable at 10–50 agents
-- only succeeds at high density
-
-Swarm:
-- good coverage
-- slow convergence
-
-Hybrid:
-- 100% success across all scales
-- fastest convergence (21 steps)
-
----
-
-## Research Contribution
-
-Demonstrates that combining:
-- reinforcement learning
-- swarm intelligence
-- heuristic planning
-
-produces emergent stability in multi-agent systems.
+## Insight
+Combining learned + heuristic + swarm strategies removes instability present in standalone systems.
