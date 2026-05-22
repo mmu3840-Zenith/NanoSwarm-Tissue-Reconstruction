@@ -1,3 +1,3 @@
 Tissue environment:
-- grid-based simulation
+- grid simulation
 - damage + pheromone fields

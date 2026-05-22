@@ -1,3 +1,3 @@
 Swarm system:
 - pheromone diffusion
-- decentralized communication
+- decentralized coordination

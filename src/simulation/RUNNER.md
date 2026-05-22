@@ -1,3 +1,3 @@
 Simulation runner:
-- full system execution loop
+- full system execution
 - environment + agents integration
