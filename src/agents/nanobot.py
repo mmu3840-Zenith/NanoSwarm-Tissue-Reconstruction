@@ -1,13 +1,11 @@
-import numpy as np
+# Nanobot Agent Logic
 
-class Nanobot:
-    def __init__(self, id, pos):
-        self.id = id
-        self.pos = np.array(pos, dtype=float)
-        self.vel = np.zeros(2)
+Implements:
+- position state (x, y)
+- velocity smoothing
+- hybrid movement policy
 
-    def step(self, move):
-        self.vel = self.vel * 0.6 + move
-        self.pos += self.vel
-        self.pos = np.clip(self.pos, 0, 59)
-        return self.pos
+Uses:
+- DQN action selection (5 actions)
+- greedy vector toward nearest damage
+- pheromone-based attraction field

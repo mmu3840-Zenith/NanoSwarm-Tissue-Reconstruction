@@ -1,0 +1,11 @@
+Architecture should show:
+
+Agents ? perceive grid
+        ?
+   DQN policy
+        ?
+Hybrid decision (RL + Greedy + Swarm)
+        ?
+Movement execution
+        ?
+Environment update (damage + pheromone)

@@ -1,16 +1,12 @@
-import torch
-import torch.nn as nn
+# Deep Q-Network
 
-class DQN(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(10, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 5)
-        )
+Input:
+- local damage state
+- pheromone field
+- distance to target
+- agent velocity context
 
-    def forward(self, x):
-        return self.net(x)
+Output:
+- 5 movement actions
+
+Used for learning adaptive navigation policies.
