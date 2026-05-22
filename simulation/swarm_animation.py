@@ -9,12 +9,22 @@ screen = pygame.display.set_mode((W, H))
 
 frames = []
 
+agents = np.random.rand(60,2) * 600
+vel = np.zeros((60,2))
+
 for t in range(120):
     screen.fill((10,10,20))
 
-    for i in range(40):
-        x = np.random.randint(0, W)
-        y = np.random.randint(0, H)
+    # simulate swarm movement (based on your system style)
+    for i in range(len(agents)):
+        direction = np.random.randn(2) * 0.5
+        vel[i] = vel[i]*0.8 + direction
+        agents[i] += vel[i]
+
+        x, y = agents[i].astype(int)
+        x = np.clip(x,0,W-1)
+        y = np.clip(y,0,H-1)
+
         pygame.draw.circle(screen, (0,200,255), (x,y), 3)
 
     frame = pygame.surfarray.array3d(screen)
@@ -23,8 +33,8 @@ for t in range(120):
 
     pygame.display.flip()
 
-imageio.mimsave('visuals/swarm_animation.mp4', frames, fps=20)
+imageio.mimsave('swarm_animation.mp4', frames, fps=20)
 
 pygame.quit()
 
-print('Animation saved')
+print('Swarm animation saved')
