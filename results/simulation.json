@@ -1,0 +1,67 @@
+{
+  "experiment": "NanoSwarm computational tissue reconstruction",
+  "model_type": "computational abstraction",
+  "agents": 100,
+  "steps_requested": 200,
+  "steps_executed": 4,
+  "seed": 42,
+  "controller": {
+    "dqn_enabled": false,
+    "pheromone_enabled": true,
+    "fallback_policy": "nearest-damage greedy navigation"
+  },
+  "environment": {
+    "width": 20,
+    "height": 20,
+    "damage_probability": 0.1
+  },
+  "initial_damage": 39,
+  "final_damage": 0,
+  "repairs": 39,
+  "completion_rate": 1.0,
+  "area_coverage": 1.0,
+  "convergence_steps": 4,
+  "failures": 0,
+  "history": [
+    {
+      "step": 0,
+      "remaining_damage": 14,
+      "completion_rate": 0.6410256410256411,
+      "repairs": 25,
+      "failures": 0,
+      "agents": 100,
+      "pheromone_cells": 25,
+      "active_agents": 0
+    },
+    {
+      "step": 1,
+      "remaining_damage": 3,
+      "completion_rate": 0.9230769230769231,
+      "repairs": 11,
+      "failures": 0,
+      "agents": 100,
+      "pheromone_cells": 36,
+      "active_agents": 0
+    },
+    {
+      "step": 2,
+      "remaining_damage": 1,
+      "completion_rate": 0.9743589743589743,
+      "repairs": 2,
+      "failures": 0,
+      "agents": 100,
+      "pheromone_cells": 38,
+      "active_agents": 0
+    },
+    {
+      "step": 3,
+      "remaining_damage": 0,
+      "completion_rate": 1.0,
+      "repairs": 1,
+      "failures": 0,
+      "agents": 100,
+      "pheromone_cells": 39,
+      "active_agents": 0
+    }
+  ]
+}

@@ -1,9 +1,12 @@
-# Self-Healing Logic
+﻿"""Distributed computational repair interface."""
+from __future__ import annotations
 
-Defines repair behavior:
-- when agent reaches damaged cell ? repair event triggers
-- pheromone reinforcement is updated
-- local environment state changes
+from src.environment.tissue_environment import TissueEnvironment
 
-Core idea:
-Distributed repair through coordinated agent coverage.
+
+def repair_cell(
+    environment: TissueEnvironment,
+    position: tuple[int, int],
+) -> bool:
+    """Attempt one simulated repair event."""
+    return environment.repair(position)
