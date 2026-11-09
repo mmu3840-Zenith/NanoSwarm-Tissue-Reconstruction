@@ -1,0 +1,32 @@
+﻿{
+    "policies":  [
+                     "greedy",
+                     "pheromone",
+                     "dqn",
+                     "hybrid"
+                 ],
+    "standard_seeds":  30,
+    "failure_probabilities":  [
+                                  0,
+                                  0.005,
+                                  0.02
+                              ],
+    "quick_seeds":  2,
+    "project":  "NanoSwarm 2.0",
+    "standard_steps":  500,
+    "populations":  [
+                        10,
+                        25,
+                        50,
+                        100,
+                        200
+                    ],
+    "damage_densities":  [
+                             0.05,
+                             0.1,
+                             0.15,
+                             0.2
+                         ],
+    "quick_steps":  150,
+    "experiment_type":  "computational_simulation"
+}

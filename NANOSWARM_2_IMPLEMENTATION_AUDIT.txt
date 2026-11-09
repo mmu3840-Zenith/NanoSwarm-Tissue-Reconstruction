@@ -1,0 +1,2147 @@
+﻿========== NANO SWARM IMPLEMENTATION AUDIT ==========
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:44:        ).astype(np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:45:        np.maximum(self.pheromone, 0, out=self.pheromone)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:46:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:47:    def observe(self, x, y, include_pheromone=False):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:48:        # Local 3x3 observation; out-of-bounds cells are zero.
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:49:        def patch(grid):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:50:            out = np.zeros((3, 3), dtype=np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:51:            for dy in range(-1, 2):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:52:                for dx in range(-1, 2):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:53:                    xx, yy = x + dx, y + dy
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:54:                    if 0 <= xx < self.size and 0 <= yy < self.size:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:55:                        out[dy + 1, dx + 1] = grid[yy, xx]
+        ).astype(np.float32)
+        np.maximum(self.pheromone, 0, out=self.pheromone)
+
+        # Local 3x3 observation; out-of-bounds cells are zero.
+        def patch(grid):
+            out = np.zeros((3, 3), dtype=np.float32)
+            for dy in range(-1, 2):
+                for dx in range(-1, 2):
+                    xx, yy = x + dx, y + dy
+                    if 0 <= xx < self.size and 0 <= yy < self.size:
+                        out[dy + 1, dx + 1] = grid[yy, xx]
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:61:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:62:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:63:class DQN:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:64:    """Small NumPy neural Q-network with replay and target-network updates."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:65:    def __init__(self, inputs, outputs=5, seed=1, lr=.002):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:66:        rng = np.random.default_rng(seed)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:67:        self.w1 = rng.normal(0, .15, (inputs, 32)).astype(np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:68:        self.b1 = np.zeros(32, np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:69:        self.w2 = rng.normal(0, .15, (32, outputs)).astype(np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:70:        self.b2 = np.zeros(outputs, np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:71:        self.target = self.copy_weights()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:72:        self.memory = deque(maxlen=10000)
+
+
+class DQN:
+    def __init__(self, inputs, outputs=5, seed=1, lr=.002):
+        rng = np.random.default_rng(seed)
+        self.w1 = rng.normal(0, .15, (inputs, 32)).astype(np.float32)
+        self.b1 = np.zeros(32, np.float32)
+        self.w2 = rng.normal(0, .15, (32, outputs)).astype(np.float32)
+        self.b2 = np.zeros(outputs, np.float32)
+        self.target = self.copy_weights()
+        self.memory = deque(maxlen=10000)
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:74:        self.rng = np.random.default_rng(seed + 7919)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:75:        self.gamma = .95
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:76:        self.updates = 0
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:77:        self.target_syncs = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:78:        self.losses = []
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:79:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:80:    def copy_weights(self):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:81:        return [a.copy() for a in (self.w1, self.b1, self.w2, self.b2)]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:82:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:83:    def load_weights(self, weights):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:84:        self.w1, self.b1, self.w2, self.b2 = [a.copy() for a in weights]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:85:
+        self.rng = np.random.default_rng(seed + 7919)
+        self.gamma = .95
+        self.updates = 0
+        self.losses = []
+
+    def copy_weights(self):
+        return [a.copy() for a in (self.w1, self.b1, self.w2, self.b2)]
+
+    def load_weights(self, weights):
+        self.w1, self.b1, self.w2, self.b2 = [a.copy() for a in weights]
+
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:89:        h = np.maximum(0, x @ w1 + b1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:90:        return h @ w2 + b2, h
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:91:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:92:    def act(self, state, epsilon, rng):
+        h = np.maximum(0, x @ w1 + b1)
+        return h @ w2 + b2, h
+
+        if rng.random() < epsilon:
+            return int(rng.integers(5))
+        return int(np.argmax(self.forward(state[None, :])[0][0]))
+
+    def remember(self, s, a, r, ns, done):
+        self.memory.append((s.copy(), a, r, ns.copy(), done))
+
+    def train_step(self, batch_size=64):
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:93:        if rng.random() < epsilon:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:94:            return int(rng.integers(5))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:95:        return int(np.argmax(self.forward(state[None, :])[0][0]))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:96:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:97:    def remember(self, s, a, r, ns, done):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:98:        self.memory.append((s.copy(), a, r, ns.copy(), done))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:99:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:100:    def train_step(self, batch_size=64):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:101:        if len(self.memory) < batch_size:
+        return h @ w2 + b2, h
+
+    def act(self, state, epsilon, rng):
+            return int(rng.integers(5))
+        return int(np.argmax(self.forward(state[None, :])[0][0]))
+
+    def remember(self, s, a, r, ns, done):
+        self.memory.append((s.copy(), a, r, ns.copy(), done))
+
+    def train_step(self, batch_size=64):
+        if len(self.memory) < batch_size:
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:135:        self.losses.append(loss)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:136:        if self.updates % 100 == 0:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:137:            self.target = self.copy_weights()
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:138:            self.target_syncs += 1
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:139:        return loss
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:140:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:141:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:142:@dataclass
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:143:class Agent:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:144:    x: int
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:145:    y: int
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:146:    failed: bool = False
+        self.losses.append(loss)
+        if self.updates % 100 == 0:
+            self.target = self.copy_weights()
+        return loss
+
+
+@dataclass
+class Agent:
+    x: int
+    y: int
+    failed: bool = False
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:164:    return int(rng.integers(0, 4))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:165:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:166:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:167:def pheromone_action(env, agent, rng):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:168:    """Follow local damage cues and local pheromone gradients."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:169:    damage = env.observe(agent.x, agent.y).reshape(3, 3)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:170:    pheromone = env.observe(agent.x, agent.y, True)[9:].reshape(3, 3)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:171:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:172:    # Signal a locally visible damage site so other agents may discover it.
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:173:    visible_y, visible_x = np.where(damage > 0)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:174:    for py, px in zip(visible_y, visible_x):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:175:        env.pheromone[
+    return int(rng.integers(0, 4))
+
+
+    """Follow local damage cues and local pheromone gradients."""
+    damage = env.observe(agent.x, agent.y).reshape(3, 3)
+    pheromone = env.observe(agent.x, agent.y, True)[9:].reshape(3, 3)
+
+    # Signal a locally visible damage site so other agents may discover it.
+    visible_y, visible_x = np.where(damage > 0)
+    for py, px in zip(visible_y, visible_x):
+        env.pheromone[
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:190:    return int(rng.integers(0, 4))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:191:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:192:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:193:def make_failure_schedule(agents_n, steps, seed):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:194:    # Exogenous random events: independent of policy action randomness.
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:195:    schedule_rng = np.random.default_rng(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:196:        np.random.SeedSequence([int(seed), int(agents_n), int(steps), 77123])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:197:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:198:    uniforms = schedule_rng.random((steps, agents_n))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:199:    recovery_durations = schedule_rng.integers(2, 7, size=(steps, agents_n))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:200:    import hashlib
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:201:    digest = hashlib.sha256(uniforms.tobytes() + recovery_durations.tobytes()).hexdigest()[:16]
+    return int(rng.integers(0, 4))
+
+
+    # Exogenous random events: independent of policy action randomness.
+    schedule_rng = np.random.default_rng(
+        np.random.SeedSequence([int(seed), int(agents_n), int(steps), 77123])
+    )
+    uniforms = schedule_rng.random((steps, agents_n))
+    recovery_durations = schedule_rng.integers(2, 7, size=(steps, agents_n))
+    import hashlib
+    digest = hashlib.sha256(uniforms.tobytes() + recovery_durations.tobytes()).hexdigest()[:16]
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:206:    }
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:207:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:208:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:209:def run_episode(policy, agents_n=25, density=.10, failure_prob=0,
+    }
+
+
+                seed=1, steps=250, model=None, training=False,
+                failure_schedule=None):
+    if failure_schedule is None:
+        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:210:                seed=1, steps=250, model=None, training=False,
+
+
+def run_episode(policy, agents_n=25, density=.10, failure_prob=0,
+                failure_schedule=None):
+    if failure_schedule is None:
+        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+    if failure_schedule["recovery_durations"].shape != expected_shape:
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:211:                failure_schedule=None):
+
+def run_episode(policy, agents_n=25, density=.10, failure_prob=0,
+                seed=1, steps=250, model=None, training=False,
+    if failure_schedule is None:
+        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+    if failure_schedule["recovery_durations"].shape != expected_shape:
+        raise ValueError("Recovery schedule has an incompatible shape.")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:212:    if failure_schedule is None:
+def run_episode(policy, agents_n=25, density=.10, failure_prob=0,
+                seed=1, steps=250, model=None, training=False,
+                failure_schedule=None):
+        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+    if failure_schedule["recovery_durations"].shape != expected_shape:
+        raise ValueError("Recovery schedule has an incompatible shape.")
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:213:        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:214:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:215:    expected_shape = (steps, agents_n)
+                seed=1, steps=250, model=None, training=False,
+                failure_schedule=None):
+    if failure_schedule is None:
+
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+    if failure_schedule["recovery_durations"].shape != expected_shape:
+        raise ValueError("Recovery schedule has an incompatible shape.")
+
+    # Separate deterministic streams for initialization and policy decisions.
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:216:    if failure_schedule["uniforms"].shape != expected_shape:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:217:        raise ValueError("Failure schedule has an incompatible shape.")
+        failure_schedule = make_failure_schedule(agents_n, steps, seed)
+
+    expected_shape = (steps, agents_n)
+        raise ValueError("Failure schedule has an incompatible shape.")
+    if failure_schedule["recovery_durations"].shape != expected_shape:
+        raise ValueError("Recovery schedule has an incompatible shape.")
+
+    # Separate deterministic streams for initialization and policy decisions.
+    init_rng = np.random.default_rng(
+        np.random.SeedSequence([int(seed), int(agents_n), 991])
+    )
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:218:    if failure_schedule["recovery_durations"].shape != expected_shape:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:219:        raise ValueError("Recovery schedule has an incompatible shape.")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:220:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:221:    # Separate deterministic streams for initialization and policy decisions.
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:222:    init_rng = np.random.default_rng(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:223:        np.random.SeedSequence([int(seed), int(agents_n), 991])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:224:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:225:    import zlib
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:226:    policy_code = zlib.crc32(policy.encode("utf-8"))
+    expected_shape = (steps, agents_n)
+    if failure_schedule["uniforms"].shape != expected_shape:
+        raise ValueError("Failure schedule has an incompatible shape.")
+        raise ValueError("Recovery schedule has an incompatible shape.")
+
+    # Separate deterministic streams for initialization and policy decisions.
+    init_rng = np.random.default_rng(
+        np.random.SeedSequence([int(seed), int(agents_n), 991])
+    )
+    import zlib
+    policy_code = zlib.crc32(policy.encode("utf-8"))
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:238:    total_repairs = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:239:    downtime = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:240:    start = time.perf_counter()
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:241:    epsilon = .25 if training else 0.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:242:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:243:    for t in range(steps):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:244:        if env.damage.sum() == 0:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:245:            break
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:246:        for agent_index, a in enumerate(agents):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:247:            if a.failed:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:248:                a.recovery -= 1
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:249:                downtime += 1
+    total_repairs = 0
+    downtime = 0
+    start = time.perf_counter()
+
+    for t in range(steps):
+        if env.damage.sum() == 0:
+            break
+        for agent_index, a in enumerate(agents):
+            if a.failed:
+                a.recovery -= 1
+                downtime += 1
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:258:            elif policy == "pheromone":
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:259:                action = pheromone_action(env, a, rng)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:260:            elif policy in ("dqn", "hybrid"):
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:261:                action = model.act(state, epsilon, rng)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:262:            else:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:263:                raise ValueError(policy)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:264:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:265:            old_damage = float(env.damage.sum())
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:266:            dx, dy = ACTIONS[action]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:267:            nx = int(np.clip(a.x + dx, 0, env.size - 1))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:268:            ny = int(np.clip(a.y + dy, 0, env.size - 1))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:269:            a.distance += abs(nx-a.x) + abs(ny-a.y)
+            elif policy == "pheromone":
+                action = pheromone_action(env, a, rng)
+            elif policy in ("dqn", "hybrid"):
+            else:
+                raise ValueError(policy)
+
+            old_damage = float(env.damage.sum())
+            dx, dy = ACTIONS[action]
+            nx = int(np.clip(a.x + dx, 0, env.size - 1))
+            ny = int(np.clip(a.y + dy, 0, env.size - 1))
+            a.distance += abs(nx-a.x) + abs(ny-a.y)
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:273:            if repaired:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:274:                total_repairs += 1
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:275:                env.pheromone[ny, nx] += 1.0
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:276:            if training and model is not None:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:277:                next_state = env.observe(nx, ny, include_p)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:278:                model.remember(state, action, reward, next_state,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:279:                               env.damage.sum() == 0)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:280:                model.train_step()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:281:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:282:            # The same pre-generated exogenous event is presented to
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:283:            # every policy at this timestep and agent index.
+            if repaired:
+                total_repairs += 1
+                env.pheromone[ny, nx] += 1.0
+                next_state = env.observe(nx, ny, include_p)
+                model.remember(state, action, reward, next_state,
+                               env.damage.sum() == 0)
+                model.train_step()
+
+            # The same pre-generated exogenous event is presented to
+            # every policy at this timestep and agent index.
+            if failure_schedule["uniforms"][t, agent_index] < failure_prob:
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:284:            if failure_schedule["uniforms"][t, agent_index] < failure_prob:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:285:                a.failed = True
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:286:                a.recovery = int(
+
+            # The same pre-generated exogenous event is presented to
+            # every policy at this timestep and agent index.
+                a.failed = True
+                a.recovery = int(
+                    failure_schedule["recovery_durations"][t, agent_index]
+                )
+                a.failures += 1
+
+        env.update_pheromone()
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:287:                    failure_schedule["recovery_durations"][t, agent_index]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:288:                )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:289:                a.failures += 1
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:290:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:291:        env.update_pheromone()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:292:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:293:    elapsed = time.perf_counter() - start
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:294:    remaining = int(env.damage.sum())
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:295:    return {
+            if failure_schedule["uniforms"][t, agent_index] < failure_prob:
+                a.failed = True
+                a.recovery = int(
+                )
+                a.failures += 1
+
+        env.update_pheromone()
+
+    elapsed = time.perf_counter() - start
+    remaining = int(env.damage.sum())
+    return {
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:296:        "seed": seed, "policy": policy, "agents": agents_n,
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:297:        "failure_schedule_id": failure_schedule["schedule_id"],
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:298:        "density": density, "failure_probability": failure_prob,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:299:        "initial_damage": env.initial_damage, "repairs": total_repairs,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:300:        "remaining_damage": remaining,
+    remaining = int(env.damage.sum())
+    return {
+        "seed": seed, "policy": policy, "agents": agents_n,
+        "density": density, "failure_probability": failure_prob,
+        "initial_damage": env.initial_damage, "repairs": total_repairs,
+        "remaining_damage": remaining,
+        "completion": (env.initial_damage - remaining) /
+                      max(1, env.initial_damage),
+        "steps": t + 1,
+        "distance": sum(a.distance for a in agents),
+        "failures": sum(a.failures for a in agents),
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:301:        "completion": (env.initial_damage - remaining) /
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:302:                      max(1, env.initial_damage),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:303:        "steps": t + 1,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:304:        "distance": sum(a.distance for a in agents),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:305:        "failures": sum(a.failures for a in agents),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:306:        "recoveries": sum(a.recoveries for a in agents),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:307:        "agents_recovered": sum(a.recoveries > 0 for a in agents),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:308:        "downtime": downtime,
+        "density": density, "failure_probability": failure_prob,
+        "initial_damage": env.initial_damage, "repairs": total_repairs,
+        "remaining_damage": remaining,
+                      max(1, env.initial_damage),
+        "steps": t + 1,
+        "distance": sum(a.distance for a in agents),
+        "failures": sum(a.failures for a in agents),
+        "recoveries": sum(a.recoveries for a in agents),
+        "agents_recovered": sum(a.recoveries > 0 for a in agents),
+        "downtime": downtime,
+        "active_ratio": sum(not a.failed for a in agents) / agents_n,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:309:        "active_ratio": sum(not a.failed for a in agents) / agents_n,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:310:        "runtime_seconds": elapsed,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:311:        "dqn_updates": model.updates if model else 0,
+        "recoveries": sum(a.recoveries for a in agents),
+        "agents_recovered": sum(a.recoveries > 0 for a in agents),
+        "downtime": downtime,
+        "runtime_seconds": elapsed,
+        "dqn_updates": model.updates if model else 0,
+        "dqn_target_syncs": model.target_syncs if model else 0,
+        "mean_training_loss": float(np.mean(model.losses))
+            if model and model.losses else None
+    }
+
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:312:        "dqn_target_syncs": model.target_syncs if model else 0,
+        "active_ratio": sum(not a.failed for a in agents) / agents_n,
+        "runtime_seconds": elapsed,
+        "dqn_updates": model.updates if model else 0,
+        "mean_training_loss": float(np.mean(model.losses))
+            if model and model.losses else None
+    }
+
+
+def train_model(policy, seed=9000, episodes=120):
+    model = DQN(18 if policy == "hybrid" else 9, seed=seed)
+    rng = np.random.default_rng(seed)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:313:        "mean_training_loss": float(np.mean(model.losses))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:314:            if model and model.losses else None
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:315:    }
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:316:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:317:
+        "runtime_seconds": elapsed,
+        "dqn_updates": model.updates if model else 0,
+        "dqn_target_syncs": model.target_syncs if model else 0,
+            if model and model.losses else None
+    }
+
+
+def train_model(policy, seed=9000, episodes=120):
+    model = DQN(18 if policy == "hybrid" else 9, seed=seed)
+    rng = np.random.default_rng(seed)
+    for ep in range(episodes):
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:318:def train_model(policy, seed=9000, episodes=120):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:319:    model = DQN(18 if policy == "hybrid" else 9, seed=seed)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:320:    rng = np.random.default_rng(seed)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:321:    for ep in range(episodes):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:322:        run_episode(policy, agents_n=12, density=.10,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:323:                    seed=int(rng.integers(1, 2**31-1)),
+    }
+
+
+    model = DQN(18 if policy == "hybrid" else 9, seed=seed)
+    rng = np.random.default_rng(seed)
+    for ep in range(episodes):
+        run_episode(policy, agents_n=12, density=.10,
+                    seed=int(rng.integers(1, 2**31-1)),
+                    steps=100, model=model, training=True)
+    return model
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:324:                    steps=100, model=model, training=True)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:325:    return model
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:326:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:327:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:328:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:329:def summarize(rows, bootstrap_samples=4000):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:330:    """Policy summaries with percentile bootstrap confidence intervals."""
+    for ep in range(episodes):
+        run_episode(policy, agents_n=12, density=.10,
+                    seed=int(rng.integers(1, 2**31-1)),
+    return model
+
+
+
+def summarize(rows, bootstrap_samples=4000):
+    """Policy summaries with percentile bootstrap confidence intervals."""
+    keys = ("completion", "repairs", "remaining_damage", "steps",
+            "distance", "failures", "recoveries", "agents_recovered",
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:331:    keys = ("completion", "repairs", "remaining_damage", "steps",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:332:            "distance", "failures", "recoveries", "agents_recovered",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:333:            "downtime", "runtime_seconds")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:334:    result = {}
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:335:    rng = np.random.default_rng(20261109)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:336:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:337:    for policy in sorted(set(r["policy"] for r in rows)):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:338:        subset = [r for r in rows if r["policy"] == policy]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:339:        result[policy] = {}
+
+def summarize(rows, bootstrap_samples=4000):
+    """Policy summaries with percentile bootstrap confidence intervals."""
+            "distance", "failures", "recoveries", "agents_recovered",
+            "downtime", "runtime_seconds")
+    result = {}
+    rng = np.random.default_rng(20261109)
+
+    for policy in sorted(set(r["policy"] for r in rows)):
+        subset = [r for r in rows if r["policy"] == policy]
+        result[policy] = {}
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:386:        }
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:387:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:388:        for policy in policies:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:389:            vals = [r["completion"] for r in config_rows
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:390:                    if r["policy"] == policy]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:391:            if vals:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:392:                config_record["policies"][policy] = {
+        }
+
+        for policy in policies:
+                    if r["policy"] == policy]
+            if vals:
+                config_record["policies"][policy] = {
+                    "completion_mean": float(np.mean(vals)),
+                    "completion_sd": float(np.std(vals, ddof=1))
+                        if len(vals) > 1 else 0.0,
+                    "n": len(vals)
+                }
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:393:                    "completion_mean": float(np.mean(vals)),
+                    if r["policy"] == policy]
+            if vals:
+                config_record["policies"][policy] = {
+                    "completion_sd": float(np.std(vals, ddof=1))
+                        if len(vals) > 1 else 0.0,
+                    "n": len(vals)
+                }
+        output["configuration_summaries"].append(config_record)
+
+        by_seed = {}
+        for row in config_rows:
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:394:                    "completion_sd": float(np.std(vals, ddof=1))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:395:                        if len(vals) > 1 else 0.0,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:396:                    "n": len(vals)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:397:                }
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:398:        output["configuration_summaries"].append(config_record)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:399:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:400:        by_seed = {}
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:401:        for row in config_rows:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:402:            by_seed.setdefault(row["seed"], {})[row["policy"]] = row
+            if vals:
+                config_record["policies"][policy] = {
+                    "completion_mean": float(np.mean(vals)),
+                        if len(vals) > 1 else 0.0,
+                    "n": len(vals)
+                }
+        output["configuration_summaries"].append(config_record)
+
+        by_seed = {}
+        for row in config_rows:
+            by_seed.setdefault(row["seed"], {})[row["policy"]] = row
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:409:                continue
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:410:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:411:            differences = np.asarray(
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:412:                [left["completion"] - right["completion"]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:413:                 for _, left, right in pairs], dtype=float
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:414:            )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:415:            boot = rng.choice(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:416:                differences,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:417:                size=(bootstrap_samples, len(differences)),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:418:                replace=True
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:419:            ).mean(axis=1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:420:
+                continue
+
+            differences = np.asarray(
+                 for _, left, right in pairs], dtype=float
+            )
+            boot = rng.choice(
+                differences,
+                size=(bootstrap_samples, len(differences)),
+                replace=True
+            ).mean(axis=1)
+
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:424:                "failure_probability": config[2],
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:425:                "policy_a": a,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:426:                "policy_b": b,
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:427:                "difference_definition": "completion(policy_a) - completion(policy_b)",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:428:                "mean_paired_difference": float(differences.mean()),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:429:                "ci95_bootstrap": [
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:430:                    float(np.percentile(boot, 2.5)),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:431:                    float(np.percentile(boot, 97.5))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:432:                ],
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:433:                "n_pairs": int(len(differences))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:434:            })
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:435:
+                "failure_probability": config[2],
+                "policy_a": a,
+                "policy_b": b,
+                "mean_paired_difference": float(differences.mean()),
+                "ci95_bootstrap": [
+                    float(np.percentile(boot, 2.5)),
+                    float(np.percentile(boot, 97.5))
+                ],
+                "n_pairs": int(len(differences))
+            })
+
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:436:    return output
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:437:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:438:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:439:def main():
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:440:    parser = argparse.ArgumentParser()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:441:    parser.add_argument("--quick", action="store_true")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:442:    parser.add_argument("--seeds", type=int, default=30)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:443:    parser.add_argument("--episodes", type=int, default=120)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:444:    args = parser.parse_args()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:445:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:446:    os.makedirs("results_v2", exist_ok=True)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:447:    policies = ("greedy", "pheromone", "dqn", "hybrid")
+    return output
+
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--quick", action="store_true")
+    parser.add_argument("--seeds", type=int, default=30)
+    parser.add_argument("--episodes", type=int, default=120)
+    args = parser.parse_args()
+
+    os.makedirs("results_v2", exist_ok=True)
+    policies = ("greedy", "pheromone", "dqn", "hybrid")
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:459:        for seed in range(seed_count):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:460:            episode_seed = 100000 + seed
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:461:            episode_steps = 150 if args.quick else 500
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:462:            shared_schedule = make_failure_schedule(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:463:                n, episode_steps, episode_seed
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:464:            )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:465:            for policy in policies:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:466:                rows.append(run_episode(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:467:                    policy, n, density, failure,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:468:                    seed=episode_seed, steps=episode_steps,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:469:                    model=models.get(policy),
+        for seed in range(seed_count):
+            episode_seed = 100000 + seed
+            episode_steps = 150 if args.quick else 500
+                n, episode_steps, episode_seed
+            )
+            for policy in policies:
+                rows.append(run_episode(
+                    policy, n, density, failure,
+                    seed=episode_seed, steps=episode_steps,
+                    model=models.get(policy),
+                    failure_schedule=shared_schedule
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:470:                    failure_schedule=shared_schedule
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:471:                ))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:472:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:473:    with open("results_v2/trials.csv", "w", newline="") as f:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:474:        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:475:        writer.writeheader()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:476:        writer.writerows(rows)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:477:    summary = summarize(rows)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\nanoswarm_v2\__main__.py:478:    with open("results_v2/summary.json", "w") as f:
+                    policy, n, density, failure,
+                    seed=episode_seed, steps=episode_steps,
+                    model=models.get(policy),
+                ))
+
+    with open("results_v2/trials.csv", "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+    summary = summarize(rows)
+    with open("results_v2/summary.json", "w") as f:
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:63:        """Return the number of unrepaired cells."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:64:        return len(self.damage)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:65:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:66:    def completion_rate(self, initial_damage: int) -> float:
+        """Return the number of unrepaired cells."""
+        return len(self.damage)
+
+        """Return normalized repair completion in [0, 1]."""
+        if initial_damage <= 0:
+            return 1.0
+
+        repaired = initial_damage - len(self.damage)
+
+        return max(
+            0.0,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:67:        """Return normalized repair completion in [0, 1]."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:68:        if initial_damage <= 0:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:69:            return 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:70:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:71:        repaired = initial_damage - len(self.damage)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:72:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:73:        return max(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:74:            0.0,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\environment\tissue_environment.py:75:            min(1.0, repaired / initial_damage),
+        return len(self.damage)
+
+    def completion_rate(self, initial_damage: int) -> float:
+        if initial_damage <= 0:
+            return 1.0
+
+        repaired = initial_damage - len(self.damage)
+
+        return max(
+            0.0,
+            min(1.0, repaired / initial_damage),
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:8:class SimulationMetrics:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:9:    """Standard metrics for one simulation run."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:10:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:11:    completion_rate: float
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:12:    remaining_damage: int
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:13:    convergence_steps: int
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:14:    failures: int = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:15:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:16:    def as_dict(self) -> dict[str, float | int]:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:17:        """Return JSON-compatible metrics."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:18:        return {
+class SimulationMetrics:
+    """Standard metrics for one simulation run."""
+
+    remaining_damage: int
+    convergence_steps: int
+    failures: int = 0
+
+    def as_dict(self) -> dict[str, float | int]:
+        """Return JSON-compatible metrics."""
+        return {
+            "completion_rate": self.completion_rate,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:19:            "completion_rate": self.completion_rate,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:20:            "remaining_damage": self.remaining_damage,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:21:            "convergence_steps": self.convergence_steps,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:22:            "failures": self.failures,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\metrics_engine.py:23:        }
+    def as_dict(self) -> dict[str, float | int]:
+        """Return JSON-compatible metrics."""
+        return {
+            "remaining_damage": self.remaining_damage,
+            "convergence_steps": self.convergence_steps,
+            "failures": self.failures,
+        }
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:13:import matplotlib.pyplot as plt
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:14:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:15:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:16:def plot_completion_rate(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:17:    agent_counts: Sequence[int],
+import matplotlib.pyplot as plt
+
+
+    agent_counts: Sequence[int],
+    completion_rates: Sequence[float],
+    output_path: str | Path,
+) -> Path:
+    """Plot completion rate against agent count."""
+    if len(agent_counts) != len(completion_rates):
+        raise ValueError("agent_counts and completion_rates must have equal length")
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:18:    completion_rates: Sequence[float],
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:19:    output_path: str | Path,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:20:) -> Path:
+
+def plot_completion_rate(
+    agent_counts: Sequence[int],
+    output_path: str | Path,
+) -> Path:
+    """Plot completion rate against agent count."""
+    if len(agent_counts) != len(completion_rates):
+        raise ValueError("agent_counts and completion_rates must have equal length")
+
+    if not agent_counts:
+        raise ValueError("At least one data point is required")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:21:    """Plot completion rate against agent count."""
+    completion_rates: Sequence[float],
+    output_path: str | Path,
+) -> Path:
+    if len(agent_counts) != len(completion_rates):
+        raise ValueError("agent_counts and completion_rates must have equal length")
+
+    if not agent_counts:
+        raise ValueError("At least one data point is required")
+
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:22:    if len(agent_counts) != len(completion_rates):
+    output_path: str | Path,
+) -> Path:
+    """Plot completion rate against agent count."""
+        raise ValueError("agent_counts and completion_rates must have equal length")
+
+    if not agent_counts:
+        raise ValueError("At least one data point is required")
+
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:23:        raise ValueError("agent_counts and completion_rates must have equal length")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:24:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:25:    if not agent_counts:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:26:        raise ValueError("At least one data point is required")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:27:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:28:    output = Path(output_path)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:29:    output.parent.mkdir(parents=True, exist_ok=True)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:30:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:31:    figure = plt.figure()
+) -> Path:
+    """Plot completion rate against agent count."""
+    if len(agent_counts) != len(completion_rates):
+
+    if not agent_counts:
+        raise ValueError("At least one data point is required")
+
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    figure = plt.figure()
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:32:    axis = figure.add_subplot(111)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:33:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:34:    axis.plot(agent_counts, completion_rates, marker="o")
+    figure = plt.figure()
+    axis = figure.add_subplot(111)
+
+    axis.set_title("Completion Rate vs Agent Count")
+    axis.set_xlabel("Number of Agents")
+    axis.set_ylabel("Completion Rate")
+    axis.set_ylim(0.0, 1.0)
+    axis.grid(True, alpha=0.3)
+
+    figure.tight_layout()
+    figure.savefig(output, dpi=300)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:35:    axis.set_title("Completion Rate vs Agent Count")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:36:    axis.set_xlabel("Number of Agents")
+    axis = figure.add_subplot(111)
+
+    axis.plot(agent_counts, completion_rates, marker="o")
+    axis.set_xlabel("Number of Agents")
+    axis.set_ylabel("Completion Rate")
+    axis.set_ylim(0.0, 1.0)
+    axis.grid(True, alpha=0.3)
+
+    figure.tight_layout()
+    figure.savefig(output, dpi=300)
+    plt.close(figure)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:37:    axis.set_ylabel("Completion Rate")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:38:    axis.set_ylim(0.0, 1.0)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:39:    axis.grid(True, alpha=0.3)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:40:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:41:    figure.tight_layout()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:42:    figure.savefig(output, dpi=300)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:43:    plt.close(figure)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:44:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plotter.py:45:    return output
+    axis.plot(agent_counts, completion_rates, marker="o")
+    axis.set_title("Completion Rate vs Agent Count")
+    axis.set_xlabel("Number of Agents")
+    axis.set_ylim(0.0, 1.0)
+    axis.grid(True, alpha=0.3)
+
+    figure.tight_layout()
+    figure.savefig(output, dpi=300)
+    plt.close(figure)
+
+    return output
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:3:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:4:agents = np.array([10, 50, 100])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:5:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:6:greedy = {"completion":[14.5,55,100],"failure":[100,100,0]}
+
+agents = np.array([10, 50, 100])
+
+swarm = {"completion":[55,97,100],"failure":[100,80,20]}
+hybrid = {"completion":[100,100,100],"failure":[0,0,0]}
+
+plt.figure()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.title('Completion Rate')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:7:swarm = {"completion":[55,97,100],"failure":[100,80,20]}
+agents = np.array([10, 50, 100])
+
+greedy = {"completion":[14.5,55,100],"failure":[100,100,0]}
+hybrid = {"completion":[100,100,100],"failure":[0,0,0]}
+
+plt.figure()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.title('Completion Rate')
+plt.legend()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:8:hybrid = {"completion":[100,100,100],"failure":[0,0,0]}
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:9:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:10:plt.figure()
+
+greedy = {"completion":[14.5,55,100],"failure":[100,100,0]}
+swarm = {"completion":[55,97,100],"failure":[100,80,20]}
+
+plt.figure()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.title('Completion Rate')
+plt.legend()
+plt.grid()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:11:plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+hybrid = {"completion":[100,100,100],"failure":[0,0,0]}
+
+plt.figure()
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.title('Completion Rate')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+plt.figure()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:12:plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+
+plt.figure()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.title('Completion Rate')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+plt.figure()
+plt.plot(agents, greedy["failure"], marker='o')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:13:plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.figure()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.title('Completion Rate')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+plt.figure()
+plt.plot(agents, greedy["failure"], marker='o')
+plt.plot(agents, swarm["failure"], marker='o')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:14:plt.title('Completion Rate')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:15:plt.legend()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:16:plt.grid()
+plt.plot(agents, greedy["completion"], marker='o', label='Greedy')
+plt.plot(agents, swarm["completion"], marker='o', label='Swarm')
+plt.plot(agents, hybrid["completion"], marker='o', label='Hybrid')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+plt.figure()
+plt.plot(agents, greedy["failure"], marker='o')
+plt.plot(agents, swarm["failure"], marker='o')
+plt.plot(agents, hybrid["failure"], marker='o')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:17:plt.savefig('completion_rate.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:18:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:19:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:20:plt.plot(agents, greedy["failure"], marker='o')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:21:plt.plot(agents, swarm["failure"], marker='o')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:22:plt.plot(agents, hybrid["failure"], marker='o')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:23:plt.title('Failure Rate')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:24:plt.grid()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:25:plt.savefig('failure_rate.png')
+plt.title('Completion Rate')
+plt.legend()
+plt.grid()
+
+plt.figure()
+plt.plot(agents, greedy["failure"], marker='o')
+plt.plot(agents, swarm["failure"], marker='o')
+plt.plot(agents, hybrid["failure"], marker='o')
+plt.title('Failure Rate')
+plt.grid()
+plt.savefig('failure_rate.png')
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:26:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:27:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:28:x = np.arange(len(agents))
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:29:plt.bar(x-0.25, greedy["completion"], 0.25, label='Greedy')
+
+plt.figure()
+x = np.arange(len(agents))
+plt.bar(x, swarm["completion"], 0.25, label='Swarm')
+plt.bar(x+0.25, hybrid["completion"], 0.25, label='Hybrid')
+plt.xticks(x, agents)
+plt.title('System Comparison')
+plt.legend()
+plt.savefig('comparison.png')
+
+print("Plots generated")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:30:plt.bar(x, swarm["completion"], 0.25, label='Swarm')
+plt.figure()
+x = np.arange(len(agents))
+plt.bar(x-0.25, greedy["completion"], 0.25, label='Greedy')
+plt.bar(x+0.25, hybrid["completion"], 0.25, label='Hybrid')
+plt.xticks(x, agents)
+plt.title('System Comparison')
+plt.legend()
+plt.savefig('comparison.png')
+
+print("Plots generated")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:31:plt.bar(x+0.25, hybrid["completion"], 0.25, label='Hybrid')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:32:plt.xticks(x, agents)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:33:plt.title('System Comparison')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:34:plt.legend()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:35:plt.savefig('comparison.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:36:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\plot_results.py:37:print("Plots generated")
+x = np.arange(len(agents))
+plt.bar(x-0.25, greedy["completion"], 0.25, label='Greedy')
+plt.bar(x, swarm["completion"], 0.25, label='Swarm')
+plt.xticks(x, agents)
+plt.title('System Comparison')
+plt.legend()
+plt.savefig('comparison.png')
+
+print("Plots generated")
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:13:hybrid_steps = [143, 43, 21]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:14:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:15:# =========================
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:16:# 1. COMPLETION RATE
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:17:# =========================
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:18:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:19:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:20:plt.plot(agents, greedy, marker='o', label='Greedy')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:21:plt.plot(agents, swarm, marker='o', label='Swarm')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:22:plt.plot(agents, hybrid, marker='o', label='Hybrid')
+hybrid_steps = [143, 43, 21]
+
+# =========================
+# =========================
+
+plt.figure()
+plt.plot(agents, greedy, marker='o', label='Greedy')
+plt.plot(agents, swarm, marker='o', label='Swarm')
+plt.plot(agents, hybrid, marker='o', label='Hybrid')
+plt.title('Completion Rate vs Agents')
+plt.xlabel('Agents')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:23:plt.title('Completion Rate vs Agents')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:24:plt.xlabel('Agents')
+plt.plot(agents, greedy, marker='o', label='Greedy')
+plt.plot(agents, swarm, marker='o', label='Swarm')
+plt.plot(agents, hybrid, marker='o', label='Hybrid')
+plt.xlabel('Agents')
+plt.ylabel('Completion %')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+# =========================
+# 2. CONVERGENCE SPEED
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:25:plt.ylabel('Completion %')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:26:plt.legend()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:27:plt.grid()
+plt.plot(agents, hybrid, marker='o', label='Hybrid')
+plt.title('Completion Rate vs Agents')
+plt.xlabel('Agents')
+plt.legend()
+plt.grid()
+plt.savefig('completion_rate.png')
+
+# =========================
+# 2. CONVERGENCE SPEED
+# =========================
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:28:plt.savefig('completion_rate.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:29:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:30:# =========================
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:31:# 2. CONVERGENCE SPEED
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:32:# =========================
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:33:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:34:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:35:plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_figures.py:36:plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+plt.ylabel('Completion %')
+plt.legend()
+plt.grid()
+
+# =========================
+# 2. CONVERGENCE SPEED
+# =========================
+
+plt.figure()
+plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:7:swarm_steps = [800, 350, 298]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:8:hybrid_steps = [143, 43, 21]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:9:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:10:greedy_completion = [14.5, 55, 100]
+swarm_steps = [800, 350, 298]
+hybrid_steps = [143, 43, 21]
+
+swarm_completion = [55, 97, 100]
+hybrid_completion = [100, 100, 100]
+
+plt.figure()
+plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+plt.plot(agents, hybrid_steps, marker='o', label='Hybrid')
+plt.title('Convergence Speed')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:11:swarm_completion = [55, 97, 100]
+hybrid_steps = [143, 43, 21]
+
+greedy_completion = [14.5, 55, 100]
+hybrid_completion = [100, 100, 100]
+
+plt.figure()
+plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+plt.plot(agents, hybrid_steps, marker='o', label='Hybrid')
+plt.title('Convergence Speed')
+plt.legend()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:12:hybrid_completion = [100, 100, 100]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:13:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:14:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:15:plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:16:plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:17:plt.plot(agents, hybrid_steps, marker='o', label='Hybrid')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:18:plt.title('Convergence Speed')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:19:plt.legend()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:20:plt.grid()
+
+greedy_completion = [14.5, 55, 100]
+swarm_completion = [55, 97, 100]
+
+plt.figure()
+plt.plot(agents, greedy_steps, marker='o', label='Greedy')
+plt.plot(agents, swarm_steps, marker='o', label='Swarm')
+plt.plot(agents, hybrid_steps, marker='o', label='Hybrid')
+plt.title('Convergence Speed')
+plt.legend()
+plt.grid()
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:21:plt.savefig('convergence_speed.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:22:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:23:plt.figure()
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:24:plt.plot(agents, greedy_completion, marker='o', label='Greedy')
+plt.savefig('convergence_speed.png')
+
+plt.figure()
+plt.plot(agents, swarm_completion, marker='o', label='Swarm')
+plt.plot(agents, hybrid_completion, marker='o', label='Hybrid')
+plt.title('Completion Scaling')
+plt.legend()
+plt.grid()
+plt.savefig('completion_scaling.png')
+
+plt.figure()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:25:plt.plot(agents, swarm_completion, marker='o', label='Swarm')
+
+plt.figure()
+plt.plot(agents, greedy_completion, marker='o', label='Greedy')
+plt.plot(agents, hybrid_completion, marker='o', label='Hybrid')
+plt.title('Completion Scaling')
+plt.legend()
+plt.grid()
+plt.savefig('completion_scaling.png')
+
+plt.figure()
+gap = np.array(hybrid_steps) - np.array(swarm_steps)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:26:plt.plot(agents, hybrid_completion, marker='o', label='Hybrid')
+plt.figure()
+plt.plot(agents, greedy_completion, marker='o', label='Greedy')
+plt.plot(agents, swarm_completion, marker='o', label='Swarm')
+plt.title('Completion Scaling')
+plt.legend()
+plt.grid()
+plt.savefig('completion_scaling.png')
+
+plt.figure()
+gap = np.array(hybrid_steps) - np.array(swarm_steps)
+plt.bar(['10','50','100'], gap)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:27:plt.title('Completion Scaling')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:28:plt.legend()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:29:plt.grid()
+plt.plot(agents, greedy_completion, marker='o', label='Greedy')
+plt.plot(agents, swarm_completion, marker='o', label='Swarm')
+plt.plot(agents, hybrid_completion, marker='o', label='Hybrid')
+plt.legend()
+plt.grid()
+plt.savefig('completion_scaling.png')
+
+plt.figure()
+gap = np.array(hybrid_steps) - np.array(swarm_steps)
+plt.bar(['10','50','100'], gap)
+plt.title('Efficiency Gain (Hybrid vs Swarm)')
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:30:plt.savefig('completion_scaling.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:31:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:32:plt.figure()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:33:gap = np.array(hybrid_steps) - np.array(swarm_steps)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:34:plt.bar(['10','50','100'], gap)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:35:plt.title('Efficiency Gain (Hybrid vs Swarm)')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:36:plt.savefig('performance_gap.png')
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:37:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\metrics\real_plots.py:38:print('Plots generated')
+plt.title('Completion Scaling')
+plt.legend()
+plt.grid()
+
+plt.figure()
+gap = np.array(hybrid_steps) - np.array(swarm_steps)
+plt.bar(['10','50','100'], gap)
+plt.title('Efficiency Gain (Hybrid vs Swarm)')
+plt.savefig('performance_gap.png')
+
+print('Plots generated')
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py ==========
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:1:"""Reinforcement-learning training utilities."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:2:from __future__ import annotations
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:3:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:4:import random
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:5:from collections import deque
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:6:from dataclasses import dataclass
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:7:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:8:import numpy as np
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:9:import torch
+from __future__ import annotations
+
+import random
+from collections import deque
+from dataclasses import dataclass
+
+import numpy as np
+import torch
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:13:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:14:@dataclass
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:15:class Experience:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:16:    """One replay transition."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:17:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:18:    state: np.ndarray
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:19:    action: int
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:20:    reward: float
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:21:    next_state: np.ndarray
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:22:    done: bool
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:23:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:24:
+
+@dataclass
+class Experience:
+
+    state: np.ndarray
+    action: int
+    reward: float
+    next_state: np.ndarray
+    done: bool
+
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:25:class ReplayBuffer:
+    done: bool
+
+
+    """Fixed-capacity experience replay buffer."""
+
+    def __init__(self, capacity: int = 10_000) -> None:
+        if capacity <= 0:
+            raise ValueError("capacity must be positive")
+
+        self.buffer = deque(maxlen=capacity)
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:26:    """Fixed-capacity experience replay buffer."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:27:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:28:    def __init__(self, capacity: int = 10_000) -> None:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:29:        if capacity <= 0:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:30:            raise ValueError("capacity must be positive")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:31:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:32:        self.buffer = deque(maxlen=capacity)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:33:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:34:    def add(self, experience: Experience) -> None:
+
+
+class ReplayBuffer:
+
+    def __init__(self, capacity: int = 10_000) -> None:
+        if capacity <= 0:
+            raise ValueError("capacity must be positive")
+
+        self.buffer = deque(maxlen=capacity)
+
+    def add(self, experience: Experience) -> None:
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:48:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:49:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:50:class DQNTrainer:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:51:    """DQN inference and training configuration."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:52:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:53:    def __init__(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:54:        self,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:55:        state_dim: int = 10,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:56:        action_dim: int = 5,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:57:        learning_rate: float = 1e-3,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:58:    ) -> None:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:59:        self.action_dim = action_dim
+
+
+class DQNTrainer:
+
+    def __init__(
+        self,
+        state_dim: int = 10,
+        action_dim: int = 5,
+        learning_rate: float = 1e-3,
+    ) -> None:
+        self.action_dim = action_dim
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:82:    def select_action(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:83:        self,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:84:        state: np.ndarray,
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:85:        epsilon: float = 0.1,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:86:    ) -> int:
+    def select_action(
+        self,
+        state: np.ndarray,
+    ) -> int:
+        """Select an epsilon-greedy action."""
+        if not 0.0 <= epsilon <= 1.0:
+            raise ValueError(
+                "epsilon must be between 0 and 1"
+            )
+
+        if random.random() < epsilon:
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:87:        """Select an epsilon-greedy action."""
+        state: np.ndarray,
+        epsilon: float = 0.1,
+    ) -> int:
+        if not 0.0 <= epsilon <= 1.0:
+            raise ValueError(
+                "epsilon must be between 0 and 1"
+            )
+
+        if random.random() < epsilon:
+            return random.randrange(self.action_dim)
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:88:        if not 0.0 <= epsilon <= 1.0:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:89:            raise ValueError(
+        epsilon: float = 0.1,
+    ) -> int:
+        """Select an epsilon-greedy action."""
+            raise ValueError(
+                "epsilon must be between 0 and 1"
+            )
+
+        if random.random() < epsilon:
+            return random.randrange(self.action_dim)
+
+        tensor_state = torch.as_tensor(
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:90:                "epsilon must be between 0 and 1"
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:91:            )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:92:
+        """Select an epsilon-greedy action."""
+        if not 0.0 <= epsilon <= 1.0:
+            raise ValueError(
+            )
+
+        if random.random() < epsilon:
+            return random.randrange(self.action_dim)
+
+        tensor_state = torch.as_tensor(
+            state,
+            dtype=torch.float32,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:93:        if random.random() < epsilon:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:94:            return random.randrange(self.action_dim)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:95:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:96:        tensor_state = torch.as_tensor(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:97:            state,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:98:            dtype=torch.float32,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:99:        ).reshape(1, -1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:100:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\trainer.py:101:        with torch.no_grad():
+                "epsilon must be between 0 and 1"
+            )
+
+            return random.randrange(self.action_dim)
+
+        tensor_state = torch.as_tensor(
+            state,
+            dtype=torch.float32,
+        ).reshape(1, -1)
+
+        with torch.no_grad():
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:4:from .trainer import (
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:5:    DQNTrainer,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:6:    Experience,
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:7:    ReplayBuffer,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:8:)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:9:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:10:__all__ = [
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:11:    "DQN",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:12:    "DQNTrainer",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:13:    "Experience",
+from .trainer import (
+    DQNTrainer,
+    Experience,
+)
+
+__all__ = [
+    "DQN",
+    "DQNTrainer",
+    "Experience",
+    "ReplayBuffer",
+]
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:14:    "ReplayBuffer",
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\rl\__init__.py:15:]
+    "DQN",
+    "DQNTrainer",
+    "Experience",
+]
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:171:    repaired_cells: set[tuple[int, int]] = set()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:172:    repair_events = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:173:    failures = 0
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:174:    first_completion_step: int | None = None
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:175:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:176:    history: list[dict] = []
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:177:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:178:    for step in range(steps):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:179:        step_repairs = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:180:        step_failures = 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:181:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:182:        for agent in nanobots:
+    repaired_cells: set[tuple[int, int]] = set()
+    repair_events = 0
+    failures = 0
+
+    history: list[dict] = []
+
+    for step in range(steps):
+        step_repairs = 0
+        step_failures = 0
+
+        for agent in nanobots:
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:245:        swarm_state = swarm.step()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:246:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:247:        remaining = environment.remaining_damage()
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:248:        completion = environment.completion_rate(initial_damage)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:249:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:250:        if (
+        swarm_state = swarm.step()
+
+        remaining = environment.remaining_damage()
+
+        if (
+            first_completion_step is None
+            and completion >= 1.0
+        ):
+            first_completion_step = step
+
+        history.append(
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:251:            first_completion_step is None
+        completion = environment.completion_rate(initial_damage)
+
+        if (
+            and completion >= 1.0
+        ):
+            first_completion_step = step
+
+        history.append(
+            {
+                "step": step,
+                "remaining_damage": remaining,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:252:            and completion >= 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:253:        ):
+
+        if (
+            first_completion_step is None
+        ):
+            first_completion_step = step
+
+        history.append(
+            {
+                "step": step,
+                "remaining_damage": remaining,
+                "completion_rate": completion,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:254:            first_completion_step = step
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:255:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:256:        history.append(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:257:            {
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:258:                "step": step,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:259:                "remaining_damage": remaining,
+            first_completion_step is None
+            and completion >= 1.0
+        ):
+
+        history.append(
+            {
+                "step": step,
+                "remaining_damage": remaining,
+                "completion_rate": completion,
+                "repairs": step_repairs,
+                "failures": step_failures,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:260:                "completion_rate": completion,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:261:                "repairs": step_repairs,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:262:                "failures": step_failures,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:263:                "agents": agents,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:264:                "pheromone_cells": swarm_state["pheromone_cells"],
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:265:                "active_agents": sum(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:266:                    1 for agent in nanobots
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:267:                    if agent.position() in environment.damage
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:268:                ),
+            {
+                "step": step,
+                "remaining_damage": remaining,
+                "repairs": step_repairs,
+                "failures": step_failures,
+                "agents": agents,
+                "pheromone_cells": swarm_state["pheromone_cells"],
+                "active_agents": sum(
+                    1 for agent in nanobots
+                    if agent.position() in environment.damage
+                ),
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:274:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:275:    final_damage = environment.remaining_damage()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:276:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:277:    if first_completion_step is None:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:278:        convergence_steps = steps
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:279:    else:
+
+    final_damage = environment.remaining_damage()
+
+        convergence_steps = steps
+    else:
+        convergence_steps = first_completion_step + 1
+
+    area_coverage = (
+        len(repaired_cells)
+        / float(initial_damage)
+        if initial_damage > 0
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:280:        convergence_steps = first_completion_step + 1
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:281:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:282:    area_coverage = (
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:283:        len(repaired_cells)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:284:        / float(initial_damage)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:285:        if initial_damage > 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:286:        else 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:287:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:288:
+    if first_completion_step is None:
+        convergence_steps = steps
+    else:
+
+    area_coverage = (
+        len(repaired_cells)
+        / float(initial_damage)
+        if initial_damage > 0
+        else 1.0
+    )
+
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:306:        "initial_damage": initial_damage,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:307:        "final_damage": final_damage,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:308:        "repairs": repair_events,
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:309:        "completion_rate": environment.completion_rate(initial_damage),
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:310:        "area_coverage": area_coverage,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:311:        "convergence_steps": convergence_steps,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:312:        "failures": failures,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:313:        "history": history,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:314:    }
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:315:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:316:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:317:def save_result(
+        "initial_damage": initial_damage,
+        "final_damage": final_damage,
+        "repairs": repair_events,
+        "area_coverage": area_coverage,
+        "convergence_steps": convergence_steps,
+        "failures": failures,
+        "history": history,
+    }
+
+
+def save_result(
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:333:    return output_path
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:334:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:335:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:336:def main() -> None:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:337:    """Run the default experiment and save the result."""
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:338:    result = run_simulation(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:339:        agents=100,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:340:        steps=200,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:341:        seed=42,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:342:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:343:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:344:    output = save_result(result)
+    return output_path
+
+
+    """Run the default experiment and save the result."""
+    result = run_simulation(
+        agents=100,
+        steps=200,
+        seed=42,
+    )
+
+    output = save_result(result)
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:348:    print(f"Initial damage: {result['initial_damage']}")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:349:    print(f"Final damage: {result['final_damage']}")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:350:    print(
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:351:        "Completion rate: "
+    print(f"Initial damage: {result['initial_damage']}")
+    print(f"Final damage: {result['final_damage']}")
+    print(
+        f"{result['completion_rate']:.4f}"
+    )
+    print(
+        "Area coverage: "
+        f"{result['area_coverage']:.4f}"
+    )
+    print(f"Repairs: {result['repairs']}")
+    print(f"Convergence steps: {result['convergence_steps']}")
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:352:        f"{result['completion_rate']:.4f}"
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:353:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:354:    print(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:355:        "Area coverage: "
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:356:        f"{result['area_coverage']:.4f}"
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:357:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:358:    print(f"Repairs: {result['repairs']}")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:359:    print(f"Convergence steps: {result['convergence_steps']}")
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\src\simulation\runner.py:360:    print(f"Failures: {result['failures']}")
+    print(f"Final damage: {result['final_damage']}")
+    print(
+        "Completion rate: "
+    )
+    print(
+        "Area coverage: "
+        f"{result['area_coverage']:.4f}"
+    )
+    print(f"Repairs: {result['repairs']}")
+    print(f"Convergence steps: {result['convergence_steps']}")
+    print(f"Failures: {result['failures']}")
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:18:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:19:    assert environment.repair((0, 0))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:20:    assert environment.remaining_damage() == initial - 1
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:21:    assert environment.completion_rate(initial) > 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:22:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:23:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:24:def test_invalid_environment():
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:25:    try:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:26:        TissueEnvironment(width=0)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:27:    except ValueError:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:28:        pass
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_environment.py:29:    else:
+
+    assert environment.repair((0, 0))
+    assert environment.remaining_damage() == initial - 1
+
+
+def test_invalid_environment():
+    try:
+        TissueEnvironment(width=0)
+    except ValueError:
+        pass
+    else:
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:11:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:12:    data = metrics.as_dict()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:13:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:14:    assert data["completion_rate"] == 0.75
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:15:    assert data["remaining_damage"] == 3
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:16:    assert data["convergence_steps"] == 20
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_metrics.py:17:    assert data["failures"] == 1
+
+    data = metrics.as_dict()
+
+    assert data["remaining_damage"] == 3
+    assert data["convergence_steps"] == 20
+    assert data["failures"] == 1
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:26:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:27:    def test_episode_metrics(self):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:28:        r = run_episode("greedy", agents_n=3, seed=3, steps=10)
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:29:        self.assertGreaterEqual(r["completion"], 0)
+
+    def test_episode_metrics(self):
+        r = run_episode("greedy", agents_n=3, seed=3, steps=10)
+        self.assertLessEqual(r["completion"], 1)
+
+if __name__ == "__main__":
+    unittest.main()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:30:        self.assertLessEqual(r["completion"], 1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:31:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:32:if __name__ == "__main__":
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2.py:33:    unittest.main()
+    def test_episode_metrics(self):
+        r = run_episode("greedy", agents_n=3, seed=3, steps=10)
+        self.assertGreaterEqual(r["completion"], 0)
+
+if __name__ == "__main__":
+    unittest.main()
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:13:        for _ in range(100):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:14:            model.train_step(batch_size=32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:15:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:16:        self.assertEqual(model.target_syncs, 1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:17:        for online, target in zip(model.copy_weights(), model.target):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:18:            np.testing.assert_allclose(online, target)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:19:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:20:    def test_recovery_is_measured(self):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:21:        result = run_episode(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:22:            "greedy", agents_n=4, density=.20,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:23:            failure_prob=1.0, seed=81, steps=40
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_integrity.py:24:        )
+        for _ in range(100):
+            model.train_step(batch_size=32)
+
+        for online, target in zip(model.copy_weights(), model.target):
+            np.testing.assert_allclose(online, target)
+
+    def test_recovery_is_measured(self):
+        result = run_episode(
+            "greedy", agents_n=4, density=.20,
+            failure_prob=1.0, seed=81, steps=40
+        )
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:6:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:7:class NanoSwarmV2ResearchTests(unittest.TestCase):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:8:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:9:    def test_dqn_replay_training_updates_weights(self):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:10:        model = DQN(9, seed=11)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:11:        before = model.w1.copy()
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:12:        for i in range(80):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:13:            state = np.full(9, i / 80, dtype=np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:14:            model.remember(state, i % 5, 1.0, state * .5, False)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:15:        loss = model.train_step(batch_size=32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:16:        self.assertIsNotNone(loss)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:17:        self.assertGreater(model.updates, 0)
+
+class NanoSwarmV2ResearchTests(unittest.TestCase):
+
+        model = DQN(9, seed=11)
+        before = model.w1.copy()
+        for i in range(80):
+            state = np.full(9, i / 80, dtype=np.float32)
+            model.remember(state, i % 5, 1.0, state * .5, False)
+        loss = model.train_step(batch_size=32)
+        self.assertIsNotNone(loss)
+        self.assertGreater(model.updates, 0)
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:18:        self.assertFalse(np.array_equal(before, model.w1))
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:19:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:20:    def test_dqn_replay_rng_is_seeded(self):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:21:        a, b = DQN(9, seed=42), DQN(9, seed=42)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:22:        for i in range(100):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:23:            state = np.full(9, i, dtype=np.float32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:24:            for model in (a, b):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:25:                model.remember(state, i % 5, float(i), state, False)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:26:        a.train_step(32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:27:        b.train_step(32)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_research.py:28:        np.testing.assert_allclose(a.w1, b.w1)
+        self.assertGreater(model.updates, 0)
+        self.assertFalse(np.array_equal(before, model.w1))
+
+        a, b = DQN(9, seed=42), DQN(9, seed=42)
+        for i in range(100):
+            state = np.full(9, i, dtype=np.float32)
+            for model in (a, b):
+                model.remember(state, i % 5, float(i), state, False)
+        a.train_step(32)
+        b.train_step(32)
+        np.testing.assert_allclose(a.w1, b.w1)
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:1:import unittest
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:2:import numpy as np
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:3:from nanoswarm_v2.__main__ import (
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:4:    make_failure_schedule,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:5:    run_episode,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:6:)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:7:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:8:class SharedRandomnessTests(unittest.TestCase):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:9:
+import unittest
+import numpy as np
+from nanoswarm_v2.__main__ import (
+    run_episode,
+)
+
+class SharedRandomnessTests(unittest.TestCase):
+
+    def test_failure_schedule_is_reproducible(self):
+        a = make_failure_schedule(8, 100, 1234)
+        b = make_failure_schedule(8, 100, 1234)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:10:    def test_failure_schedule_is_reproducible(self):
+
+class SharedRandomnessTests(unittest.TestCase):
+
+        a = make_failure_schedule(8, 100, 1234)
+        b = make_failure_schedule(8, 100, 1234)
+        np.testing.assert_array_equal(a["uniforms"], b["uniforms"])
+        np.testing.assert_array_equal(
+            a["recovery_durations"], b["recovery_durations"]
+        )
+        self.assertEqual(a["schedule_id"], b["schedule_id"])
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:11:        a = make_failure_schedule(8, 100, 1234)
+class SharedRandomnessTests(unittest.TestCase):
+
+    def test_failure_schedule_is_reproducible(self):
+        b = make_failure_schedule(8, 100, 1234)
+        np.testing.assert_array_equal(a["uniforms"], b["uniforms"])
+        np.testing.assert_array_equal(
+            a["recovery_durations"], b["recovery_durations"]
+        )
+        self.assertEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_failure_schedule_is_independent_of_policy(self):
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:12:        b = make_failure_schedule(8, 100, 1234)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:13:        np.testing.assert_array_equal(a["uniforms"], b["uniforms"])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:14:        np.testing.assert_array_equal(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:15:            a["recovery_durations"], b["recovery_durations"]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:16:        )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:17:        self.assertEqual(a["schedule_id"], b["schedule_id"])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:18:
+
+    def test_failure_schedule_is_reproducible(self):
+        a = make_failure_schedule(8, 100, 1234)
+        np.testing.assert_array_equal(a["uniforms"], b["uniforms"])
+        np.testing.assert_array_equal(
+            a["recovery_durations"], b["recovery_durations"]
+        )
+        self.assertEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_failure_schedule_is_independent_of_policy(self):
+        shared = make_failure_schedule(8, 100, 4321)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:19:    def test_failure_schedule_is_independent_of_policy(self):
+        )
+        self.assertEqual(a["schedule_id"], b["schedule_id"])
+
+        shared = make_failure_schedule(8, 100, 4321)
+        greedy = run_episode(
+            "greedy", agents_n=8, density=.10, failure_prob=.02,
+            seed=4321, steps=100, failure_schedule=shared
+        )
+        pheromone = run_episode(
+            "pheromone", agents_n=8, density=.10, failure_prob=.02,
+            seed=4321, steps=100, failure_schedule=shared
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:20:        shared = make_failure_schedule(8, 100, 4321)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:21:        greedy = run_episode(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:22:            "greedy", agents_n=8, density=.10, failure_prob=.02,
+        self.assertEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_failure_schedule_is_independent_of_policy(self):
+        greedy = run_episode(
+            "greedy", agents_n=8, density=.10, failure_prob=.02,
+            seed=4321, steps=100, failure_schedule=shared
+        )
+        pheromone = run_episode(
+            "pheromone", agents_n=8, density=.10, failure_prob=.02,
+            seed=4321, steps=100, failure_schedule=shared
+        )
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:23:            seed=4321, steps=100, failure_schedule=shared
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:24:        )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:25:        pheromone = run_episode(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:26:            "pheromone", agents_n=8, density=.10, failure_prob=.02,
+        shared = make_failure_schedule(8, 100, 4321)
+        greedy = run_episode(
+            "greedy", agents_n=8, density=.10, failure_prob=.02,
+        )
+        pheromone = run_episode(
+            "pheromone", agents_n=8, density=.10, failure_prob=.02,
+            seed=4321, steps=100, failure_schedule=shared
+        )
+        self.assertEqual(
+            greedy["failure_schedule_id"],
+            pheromone["failure_schedule_id"]
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:27:            seed=4321, steps=100, failure_schedule=shared
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:28:        )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:29:        self.assertEqual(
+        )
+        pheromone = run_episode(
+            "pheromone", agents_n=8, density=.10, failure_prob=.02,
+        )
+        self.assertEqual(
+            greedy["failure_schedule_id"],
+            pheromone["failure_schedule_id"]
+        )
+
+    def test_different_seeds_produce_different_schedules(self):
+        a = make_failure_schedule(8, 100, 1)
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:30:            greedy["failure_schedule_id"],
+            seed=4321, steps=100, failure_schedule=shared
+        )
+        self.assertEqual(
+            pheromone["failure_schedule_id"]
+        )
+
+    def test_different_seeds_produce_different_schedules(self):
+        a = make_failure_schedule(8, 100, 1)
+        b = make_failure_schedule(8, 100, 2)
+        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:31:            pheromone["failure_schedule_id"]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:32:        )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:33:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:34:    def test_different_seeds_produce_different_schedules(self):
+        )
+        self.assertEqual(
+            greedy["failure_schedule_id"],
+        )
+
+    def test_different_seeds_produce_different_schedules(self):
+        a = make_failure_schedule(8, 100, 1)
+        b = make_failure_schedule(8, 100, 2)
+        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_schedule_shape_is_validated(self):
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:35:        a = make_failure_schedule(8, 100, 1)
+        )
+
+    def test_different_seeds_produce_different_schedules(self):
+        b = make_failure_schedule(8, 100, 2)
+        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_schedule_shape_is_validated(self):
+        invalid = make_failure_schedule(4, 10, 1)
+        with self.assertRaises(ValueError):
+            run_episode(
+                "greedy", agents_n=4, density=.10, failure_prob=.01,
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:36:        b = make_failure_schedule(8, 100, 2)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:37:        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:38:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:39:    def test_schedule_shape_is_validated(self):
+
+    def test_different_seeds_produce_different_schedules(self):
+        a = make_failure_schedule(8, 100, 1)
+        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_schedule_shape_is_validated(self):
+        invalid = make_failure_schedule(4, 10, 1)
+        with self.assertRaises(ValueError):
+            run_episode(
+                "greedy", agents_n=4, density=.10, failure_prob=.01,
+                seed=1, steps=11, failure_schedule=invalid
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:40:        invalid = make_failure_schedule(4, 10, 1)
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:41:        with self.assertRaises(ValueError):
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:42:            run_episode(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:43:                "greedy", agents_n=4, density=.10, failure_prob=.01,
+        self.assertNotEqual(a["schedule_id"], b["schedule_id"])
+
+    def test_schedule_shape_is_validated(self):
+        with self.assertRaises(ValueError):
+            run_episode(
+                "greedy", agents_n=4, density=.10, failure_prob=.01,
+                seed=1, steps=11, failure_schedule=invalid
+            )
+
+if __name__ == "__main__":
+    unittest.main()
+------------------------------
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:44:                seed=1, steps=11, failure_schedule=invalid
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:45:            )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:46:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:47:if __name__ == "__main__":
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_nanoswarm_v2_shared_randomness.py:48:    unittest.main()
+        with self.assertRaises(ValueError):
+            run_episode(
+                "greedy", agents_n=4, density=.10, failure_prob=.01,
+            )
+
+if __name__ == "__main__":
+    unittest.main()
+------------------------------
+
+
+========== FILE: C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py ==========
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:25:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:26:    assert result["initial_damage"] > 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:27:    assert result["final_damage"] == 0
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:28:    assert result["completion_rate"] == 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:29:    assert result["area_coverage"] == 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:30:    assert result["repairs"] == result["initial_damage"]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:31:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:32:
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:33:def test_simulation_metrics_are_valid():
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:34:    result = run_simulation(
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:35:        agents=25,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:36:        steps=100,
+
+    assert result["initial_damage"] > 0
+    assert result["final_damage"] == 0
+    assert result["area_coverage"] == 1.0
+    assert result["repairs"] == result["initial_damage"]
+
+
+def test_simulation_metrics_are_valid():
+    result = run_simulation(
+        agents=25,
+        steps=100,
+------------------------------
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:37:        seed=7,
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:38:    )
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:39:
+> C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:40:    assert 0.0 <= result["completion_rate"] <= 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:41:    assert 0.0 <= result["area_coverage"] <= 1.0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:42:    assert result["final_damage"] >= 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:43:    assert result["repairs"] >= 0
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:44:    assert result["convergence_steps"] <= result["steps_requested"]
+  C:\Users\Mohammed Idris\NanoSwarm-Tissue-Reconstruction\tests\test_simulation.py:45:    assert result["failures"] >= 0
+        seed=7,
+    )
+
+    assert 0.0 <= result["area_coverage"] <= 1.0
+    assert result["final_damage"] >= 0
+    assert result["repairs"] >= 0
+    assert result["convergence_steps"] <= result["steps_requested"]
+    assert result["failures"] >= 0
+------------------------------

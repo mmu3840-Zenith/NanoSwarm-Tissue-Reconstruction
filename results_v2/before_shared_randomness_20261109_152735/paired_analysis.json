@@ -1,0 +1,230 @@
+{
+  "configuration_summaries": [
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 2,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.6153846153846154,
+          "completion_sd": 0.16317848796612633,
+          "n": 2
+        },
+        "greedy": {
+          "completion_mean": 0.8533653846153846,
+          "completion_sd": 0.1189843141419671,
+          "n": 2
+        },
+        "hybrid": {
+          "completion_mean": 0.11538461538461539,
+          "completion_sd": 0.16317848796612636,
+          "n": 2
+        },
+        "pheromone": {
+          "completion_mean": 0.5120192307692308,
+          "completion_sd": 0.07139058848518026,
+          "n": 2
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 2,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7142857142857142,
+          "completion_sd": 0.06734350297014738,
+          "n": 2
+        },
+        "greedy": {
+          "completion_mean": 0.9880952380952381,
+          "completion_sd": 0.016835875742536865,
+          "n": 2
+        },
+        "hybrid": {
+          "completion_mean": 0.5952380952380952,
+          "completion_sd": 0.10101525445522103,
+          "n": 2
+        },
+        "pheromone": {
+          "completion_mean": 0.8511904761904762,
+          "completion_sd": 0.09259731658395264,
+          "n": 2
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.23798076923076927,
+      "ci95_bootstrap": [
+        -0.4375,
+        -0.03846153846153855
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.5,
+      "ci95_bootstrap": [
+        0.49999999999999994,
+        0.5
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10336538461538458,
+      "ci95_bootstrap": [
+        -0.0625,
+        0.26923076923076916
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.7379807692307693,
+      "ci95_bootstrap": [
+        0.5384615384615385,
+        0.9375
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.34134615384615385,
+      "ci95_bootstrap": [
+        0.3076923076923077,
+        0.375
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.3966346153846154,
+      "ci95_bootstrap": [
+        -0.5625,
+        -0.23076923076923078
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.27380952380952384,
+      "ci95_bootstrap": [
+        -0.33333333333333337,
+        -0.2142857142857143
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.11904761904761901,
+      "ci95_bootstrap": [
+        0.0,
+        0.23809523809523803
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.13690476190476192,
+      "ci95_bootstrap": [
+        -0.25,
+        -0.023809523809523836
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.39285714285714285,
+      "ci95_bootstrap": [
+        0.33333333333333337,
+        0.45238095238095233
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.13690476190476192,
+      "ci95_bootstrap": [
+        0.08333333333333337,
+        0.19047619047619047
+      ],
+      "n_pairs": 2
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.25595238095238093,
+      "ci95_bootstrap": [
+        -0.26190476190476186,
+        -0.25
+      ],
+      "n_pairs": 2
+    }
+  ]
+}

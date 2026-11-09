@@ -1,0 +1,303 @@
+﻿ACT AS A SENIOR ROBOTICS RESEARCHER, MULTI-AGENT SYSTEMS ENGINEER,
+REINFORCEMENT-LEARNING ENGINEER, AND SCIENTIFIC SOFTWARE ARCHITECT.
+
+MISSION:
+Upgrade this existing NanoSwarm repository into NanoSwarm 2.0:
+a rigorous, reproducible, research-grade computational swarm intelligence project
+for a highly competitive university research portfolio.
+
+DO NOT STOP AT AN AUDIT. IMPLEMENT THE COMPLETE UPGRADE.
+
+============================================================
+1. PRESERVE AND INSPECT
+============================================================
+
+Inspect the existing repository before changing anything.
+
+Create a timestamped backup of every file you intend to replace.
+Preserve Git history, unrelated files, and original experimental results.
+Do not fabricate results or overwrite original results without backup.
+
+Existing project:
+- Python, NumPy, PyTorch, Pygame, pytest
+- Decentralized nanobot-inspired swarm simulation
+- DQN architecture
+- Pheromone system
+- Tissue damage and repair environment
+- Existing experiments, documentation, results and tests
+
+============================================================
+2. RESEARCH QUESTION
+============================================================
+
+Can decentralized, locally informed swarm agents combine reinforcement
+learning and environmental stigmergy to improve distributed repair efficiency
+and resilience under varying swarm populations, damage densities, and failures?
+
+Agents must make independent decisions from local observations.
+Shared policy parameters are allowed.
+A centralized controller must not select every agent's action.
+
+============================================================
+3. IMPLEMENT THE COMPLETE ARCHITECTURE
+============================================================
+
+A. AGENT SYSTEM
+- Independent agent positions and states
+- Local sensing and bounded movement
+- Local damage detection
+- Independent action selection
+- Configurable sensing radius
+- Agent status and recovery
+
+B. TISSUE ENVIRONMENT
+- Configurable grid dimensions
+- Reproducible random damage
+- Configurable damage density
+- Damage detection and repair
+- Environment state tracking
+- Seed-controlled experiments
+
+C. REAL PHEROMONE SYSTEM
+- Spatial diffusion
+- Evaporation
+- Local pheromone gradients
+- Pheromone deposition
+- Stale-trail reduction after repair
+- Configurable diffusion and evaporation
+
+Do not implement a dictionary that merely stores pheromone values.
+Implement actual spatial diffusion.
+
+D. ACTUAL DEEP Q-NETWORK
+- Neural network
+- Experience replay
+- Epsilon-greedy exploration
+- Bellman target calculation
+- Target network
+- Periodic target synchronization
+- Gradient optimization and clipping
+- Model saving and loading
+- Training statistics
+
+The DQN must genuinely train and be used during evaluation.
+Do not instantiate a network and then use greedy movement instead.
+
+E. HYBRID CONTROLLER
+Combine DQN and pheromone-guided stigmergy.
+Each agent receives local observations such as:
+- Normalized position
+- Visible target direction
+- Local damage density
+- Pheromone gradients
+- Local pheromone intensity
+
+Each agent independently selects its action.
+
+F. FAILURE AND RECOVERY
+- Configurable failure probability
+- Temporary agent inactivity
+- Timed recovery
+- Failure counting
+- Downtime measurement
+- Active-agent tracking
+
+============================================================
+4. ALGORITHMS
+============================================================
+
+Implement four genuinely distinct configurations:
+
+1. Greedy local navigation
+2. Pheromone-guided local navigation
+3. DQN without pheromone
+4. DQN combined with pheromone
+
+Use comparable environments, budgets and information.
+Document any differences.
+
+============================================================
+5. EXPERIMENTS
+============================================================
+
+Agent populations:
+10, 25, 50, 100, 200
+
+Damage densities:
+0.05, 0.10, 0.15, 0.20
+
+Failure probabilities:
+0, 0.005, 0.02
+
+Use 30 independent evaluation seeds per condition.
+Use separate training and testing seeds.
+Implement a quick mode for implementation checks.
+
+============================================================
+6. METRICS
+============================================================
+
+Calculate:
+- Damage completion rate
+- Total repairs
+- Remaining damage
+- Steps to completion
+- Total movement distance
+- Repairs per agent
+- Agent failures
+- Agent downtime
+- Active-agent ratio
+- Runtime
+- Training loss
+- DQN training updates
+
+Define every metric mathematically.
+Do not report unmeasured metrics.
+
+============================================================
+7. STATISTICS
+============================================================
+
+Implement:
+- Mean
+- Standard deviation
+- 95% confidence intervals
+- Bootstrap confidence intervals where appropriate
+- Trial-level raw data
+- Grouped experimental summaries
+- Reproducible statistical calculations
+
+Do not invent p-values or claim statistical significance without
+an appropriate statistical test.
+
+============================================================
+8. EXPECTED FILE STRUCTURE
+============================================================
+
+nanoswarm_v2/
+    __init__.py
+    core.py
+    policies.py
+    training.py
+    experiment.py
+
+tests/
+    test_nanoswarm_v2.py
+
+docs/
+    RESEARCH_PROTOCOL.md
+
+README_RESEARCH.md
+requirements-research.txt
+
+results_v2/
+    trials.csv
+    summary.json
+    training.json
+    dqn_policy.pt
+
+Generate result files only after experiments actually execute.
+Preserve original files and results.
+
+============================================================
+9. AUTOMATED TESTS
+============================================================
+
+Test:
+- Environment reproducibility
+- Tissue repair
+- Pheromone diffusion and evaporation
+- Local observation correctness
+- Agent failure and recovery
+- Valid action selection
+- DQN replay and optimization
+- Target network updates
+- Model saving and loading
+- Experiment reproducibility
+- Metric correctness
+
+Run both existing and new tests.
+Fix errors rather than weakening or deleting tests.
+
+============================================================
+10. RESEARCH DOCUMENTATION
+============================================================
+
+Document:
+- Research question
+- System architecture
+- Agent model
+- Observation and action spaces
+- Reward function
+- DQN architecture
+- Pheromone equations
+- Environment assumptions
+- Experimental variables
+- Baselines
+- Metrics
+- Statistical methodology
+- Reproducibility
+- Limitations
+
+Do not invent citations or physical validation.
+
+Clearly identify this as a computational abstraction,
+not a validated nanorobot, biological tissue reconstruction system,
+or medical technology.
+
+============================================================
+11. CODE QUALITY
+============================================================
+
+Require:
+- Modular architecture
+- Type hints where appropriate
+- Meaningful comments
+- Deterministic seeds
+- Error handling
+- No fake implementations
+- No unused parameters
+- No misleading comparisons
+- No fabricated results
+- CPU compatibility
+- Reasonable runtime and memory use
+
+============================================================
+12. FINAL EXECUTION
+============================================================
+
+I use Windows PowerShell.
+
+Implement everything in one pass.
+Do not ask me to create files manually.
+Do not split implementation into multiple manual stages.
+
+Provide one complete PowerShell installer or one ZIP package
+with one PowerShell installer.
+
+The intended commands are:
+
+python -m pip install -r requirements-research.txt
+python -m pytest -q
+python -m nanoswarm_v2.experiment --quick
+python -m nanoswarm_v2.experiment --seeds 30
+
+Run the quick tests before the full benchmark.
+
+============================================================
+13. FINAL REPORT
+============================================================
+
+Report:
+1. Files created and modified
+2. Architecture
+3. Features genuinely implemented
+4. Actual test results
+5. Experimental execution instructions
+6. Known limitations
+7. Remaining research work
+8. Honest assessment of research quality
+
+Never claim execution or testing succeeded unless it actually did.
+
+BUILD THE COMPLETE NANOSWARM 2.0 RESEARCH UPGRADE IN ONE PASS.

@@ -1,0 +1,6726 @@
+{
+  "configuration_summaries": [
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5172447400912089,
+          "completion_sd": 0.14220596884590583,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9958447971781305,
+          "completion_sd": 0.012759505576170995,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6106666184090692,
+          "completion_sd": 0.12515308308499115,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.6507422588309093,
+          "completion_sd": 0.09641252244494133,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5172447400912089,
+          "completion_sd": 0.14220596884590583,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9967058823529412,
+          "completion_sd": 0.012777500808299612,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6118418320842828,
+          "completion_sd": 0.12946503854797814,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.6337023629682579,
+          "completion_sd": 0.10978302926944127,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5172447400912089,
+          "completion_sd": 0.14220596884590583,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9973846153846153,
+          "completion_sd": 0.009955214956782595,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.607666730869708,
+          "completion_sd": 0.12512462540262087,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.6331812506096843,
+          "completion_sd": 0.12440106204978349,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5325460306101159,
+          "completion_sd": 0.1308384776847196,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9929262595929262,
+          "completion_sd": 0.02661819335496239,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6249354859148306,
+          "completion_sd": 0.10992164614953366,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5482254425598406,
+          "completion_sd": 0.07711386556896352,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5325460306101159,
+          "completion_sd": 0.1308384776847196,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9984971293481931,
+          "completion_sd": 0.005729019729102688,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6249354859148306,
+          "completion_sd": 0.10992164614953366,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5455253223597205,
+          "completion_sd": 0.08218018052602673,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.532678305742391,
+          "completion_sd": 0.13023231860041745,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.996488587840332,
+          "completion_sd": 0.009181782067174014,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6243248256504796,
+          "completion_sd": 0.09989033919698767,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5454030222374204,
+          "completion_sd": 0.09267787772337593,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5481138238095551,
+          "completion_sd": 0.1318775023936438,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9983050847457626,
+          "completion_sd": 0.006823354236210997,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6632439970806899,
+          "completion_sd": 0.10111612000200178,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5329017132315121,
+          "completion_sd": 0.08263343478785319,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5481138238095551,
+          "completion_sd": 0.1318775023936438,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9976271751233349,
+          "completion_sd": 0.0074996607864696785,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6657452330218593,
+          "completion_sd": 0.10518300331568138,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5351425548271924,
+          "completion_sd": 0.08107916219776817,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5478077165181536,
+          "completion_sd": 0.1317174686887957,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9966030806547352,
+          "completion_sd": 0.00698863860005473,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.6709922817435848,
+          "completion_sd": 0.10520271580498587,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5385414928037909,
+          "completion_sd": 0.0840153726319621,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5477648448791672,
+          "completion_sd": 0.11417710008047198,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9968405773269912,
+          "completion_sd": 0.0059000987745285866,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.7196131168304463,
+          "completion_sd": 0.12841590950294973,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.5643824666237063,
+          "completion_sd": 0.09739730815171453,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5486372362578877,
+          "completion_sd": 0.11508395521207124,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.9980625799902908,
+          "completion_sd": 0.005271597312054686,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.7216707299991706,
+          "completion_sd": 0.12741502072646357,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.555165768746347,
+          "completion_sd": 0.09300572454382844,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.5467040943429275,
+          "completion_sd": 0.11747782073793961,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 0.997449573150623,
+          "completion_sd": 0.007864207825010641,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.7134008034322733,
+          "completion_sd": 0.12495888090439242,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.550551999868013,
+          "completion_sd": 0.0905078958846688,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7847446662878641,
+          "completion_sd": 0.10988438769672067,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8250644204391121,
+          "completion_sd": 0.11560314767254488,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8528750670466919,
+          "completion_sd": 0.10715211213557332,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7847446662878641,
+          "completion_sd": 0.10988438769672067,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8250644204391121,
+          "completion_sd": 0.11560314767254488,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8449796067776616,
+          "completion_sd": 0.11920869968996584,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7863319678751656,
+          "completion_sd": 0.10917312929631222,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.822564420439112,
+          "completion_sd": 0.11520307525051114,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8235213034000892,
+          "completion_sd": 0.12235343657583729,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7895171339504088,
+          "completion_sd": 0.08919365186784443,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8352589453212648,
+          "completion_sd": 0.09203993425876787,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7835292422320358,
+          "completion_sd": 0.08979783452132464,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7895171339504088,
+          "completion_sd": 0.08919365186784443,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8387008057863811,
+          "completion_sd": 0.09264544726805693,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7797008824515486,
+          "completion_sd": 0.07777366062467622,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7905272349605099,
+          "completion_sd": 0.08899080580246124,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8378494349350102,
+          "completion_sd": 0.0941610981525459,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7754867831350247,
+          "completion_sd": 0.085447199264182,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7981297847095981,
+          "completion_sd": 0.06840037422064435,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8754339390647317,
+          "completion_sd": 0.06560723595403659,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7715684833862834,
+          "completion_sd": 0.052756431406752936,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7981297847095981,
+          "completion_sd": 0.06840037422064435,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8733500969808896,
+          "completion_sd": 0.06566947397150968,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7721763300445315,
+          "completion_sd": 0.05591851916170757,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.7998179189796993,
+          "completion_sd": 0.06944870486040165,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8756484258921217,
+          "completion_sd": 0.06599344438014686,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7636016816092857,
+          "completion_sd": 0.053987983192175515,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.8104040431460544,
+          "completion_sd": 0.06899158505015822,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8973360565408861,
+          "completion_sd": 0.055253253550871455,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7331929483596444,
+          "completion_sd": 0.07954101998263234,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.8095601612895144,
+          "completion_sd": 0.07041657238798855,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.8973360565408861,
+          "completion_sd": 0.055253253550871455,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.739943801085191,
+          "completion_sd": 0.07847063742995232,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.8113325591145438,
+          "completion_sd": 0.0727864598084774,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9006553846660222,
+          "completion_sd": 0.05736660487381914,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.7423494104105359,
+          "completion_sd": 0.0781756109822979,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9236994046947721,
+          "completion_sd": 0.0745204673691849,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.914540669913735,
+          "completion_sd": 0.07054015433164917,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9512540716268787,
+          "completion_sd": 0.06507944758812403,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9236994046947721,
+          "completion_sd": 0.0745204673691849,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.914540669913735,
+          "completion_sd": 0.07054015433164917,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9565655194383265,
+          "completion_sd": 0.06123794763438677,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9236994046947721,
+          "completion_sd": 0.0745204673691849,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.914540669913735,
+          "completion_sd": 0.07054015433164917,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9516403382192855,
+          "completion_sd": 0.06360854972876649,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9197623424670571,
+          "completion_sd": 0.06213463426223339,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9345419974526206,
+          "completion_sd": 0.04992910824848787,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9052989116838355,
+          "completion_sd": 0.06152704739174977,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9197623424670571,
+          "completion_sd": 0.06213463426223339,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9336872965979198,
+          "completion_sd": 0.04989752761265691,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9035358599207837,
+          "completion_sd": 0.06325004527187854,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9197623424670571,
+          "completion_sd": 0.06213463426223339,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.936512733297676,
+          "completion_sd": 0.045367826414840114,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9160909109206021,
+          "completion_sd": 0.06588977774684338,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9102658802788994,
+          "completion_sd": 0.05320059702978159,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9443982619373276,
+          "completion_sd": 0.036369557209847934,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8879441232510312,
+          "completion_sd": 0.06622252499753903,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9102658802788994,
+          "completion_sd": 0.05320059702978159,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9499210525398787,
+          "completion_sd": 0.034508783802852515,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8929958109185403,
+          "completion_sd": 0.06388723909662075,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9102658802788994,
+          "completion_sd": 0.05320059702978159,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9483418054229972,
+          "completion_sd": 0.032522000874803926,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8836584889640112,
+          "completion_sd": 0.07381192436434039,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9121059168999435,
+          "completion_sd": 0.057033188611087506,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9575751091522503,
+          "completion_sd": 0.027611838171243654,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8723330996471316,
+          "completion_sd": 0.06052145812866047,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9121059168999435,
+          "completion_sd": 0.057033188611087506,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.959194520854491,
+          "completion_sd": 0.02543116772239918,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.874357110689616,
+          "completion_sd": 0.060892702321477594,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9121059168999435,
+          "completion_sd": 0.057033188611087506,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9595821177537157,
+          "completion_sd": 0.02506044535708194,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.8757335015606666,
+          "completion_sd": 0.056001067865841025,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9856944444444444,
+          "completion_sd": 0.027739796830993136,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9854914529914531,
+          "completion_sd": 0.03416188727307414,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9988095238095238,
+          "completion_sd": 0.006520506636966259,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9856944444444444,
+          "completion_sd": 0.027739796830993136,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9854914529914531,
+          "completion_sd": 0.03416188727307414,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9988095238095238,
+          "completion_sd": 0.006520506636966259,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9856944444444444,
+          "completion_sd": 0.027739796830993136,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9836396011396011,
+          "completion_sd": 0.03484719354237439,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.997360248447205,
+          "completion_sd": 0.010097491536411377,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9865748441765881,
+          "completion_sd": 0.02100276982318025,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9870391333093558,
+          "completion_sd": 0.02283721725341819,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9866235022638797,
+          "completion_sd": 0.024152427096003376,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9865748441765881,
+          "completion_sd": 0.02100276982318025,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9886264348966572,
+          "completion_sd": 0.01808092693159036,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9922591362126245,
+          "completion_sd": 0.02073812612191236,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9865748441765881,
+          "completion_sd": 0.02100276982318025,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9893208793411018,
+          "completion_sd": 0.018105134362329394,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9913363983131426,
+          "completion_sd": 0.0204581792286668,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9873666954290351,
+          "completion_sd": 0.02094957833346838,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9897509542087267,
+          "completion_sd": 0.01702195613426697,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9850707923415166,
+          "completion_sd": 0.021029234128209076,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9873666954290351,
+          "completion_sd": 0.02094957833346838,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9897509542087267,
+          "completion_sd": 0.01702195613426697,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9845694943224881,
+          "completion_sd": 0.02052092239118718,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9868111398734796,
+          "completion_sd": 0.020823617646140307,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9897509542087267,
+          "completion_sd": 0.01702195613426697,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9843121351171444,
+          "completion_sd": 0.021731932111679973,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9896606004276365,
+          "completion_sd": 0.01095558356807662,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.988599982988155,
+          "completion_sd": 0.013458795328225932,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9839184197559168,
+          "completion_sd": 0.020888791197550733,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9896606004276365,
+          "completion_sd": 0.01095558356807662,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.988599982988155,
+          "completion_sd": 0.013458795328225932,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9827362146875377,
+          "completion_sd": 0.021048097061139286,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.989210149977186,
+          "completion_sd": 0.010792405017420546,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9881983765624521,
+          "completion_sd": 0.013657099946274204,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9823087345690182,
+          "completion_sd": 0.020231805541021657,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9984126984126984,
+          "completion_sd": 0.00869400884928836,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9984126984126984,
+          "completion_sd": 0.00869400884928836,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9984126984126984,
+          "completion_sd": 0.00869400884928836,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9992063492063491,
+          "completion_sd": 0.004347004424644181,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9992063492063491,
+          "completion_sd": 0.004347004424644181,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9992063492063491,
+          "completion_sd": 0.004347004424644181,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9983441558441559,
+          "completion_sd": 0.00506498849143086,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9994535519125683,
+          "completion_sd": 0.002993019439918944,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9983441558441559,
+          "completion_sd": 0.00506498849143086,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9994535519125683,
+          "completion_sd": 0.002993019439918944,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9983441558441559,
+          "completion_sd": 0.00506498849143086,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9994535519125683,
+          "completion_sd": 0.002993019439918944,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9995238095238096,
+          "completion_sd": 0.0026082026547864967,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9987503487503487,
+          "completion_sd": 0.0038290498909255475,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9995983935742973,
+          "completion_sd": 0.0021996889859645288,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9987503487503487,
+          "completion_sd": 0.0038290498909255475,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9995983935742973,
+          "completion_sd": 0.0021996889859645288,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9995983935742973,
+          "completion_sd": 0.0021996889859645288,
+          "n": 30
+        }
+      }
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "n_seeds": 30,
+      "policies": {
+        "dqn": {
+          "completion_mean": 0.9987503487503487,
+          "completion_sd": 0.0038290498909255475,
+          "n": 30
+        },
+        "greedy": {
+          "completion_mean": 1.0,
+          "completion_sd": 0.0,
+          "n": 30
+        },
+        "hybrid": {
+          "completion_mean": 0.9995983935742973,
+          "completion_sd": 0.0021996889859645288,
+          "n": 30
+        },
+        "pheromone": {
+          "completion_mean": 0.9995983935742973,
+          "completion_sd": 0.0021996889859645288,
+          "n": 30
+        }
+      }
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.47860005708692166,
+      "ci95_bootstrap": [
+        -0.5265576498523724,
+        -0.4328025316337948
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09342187831786025,
+      "ci95_bootstrap": [
+        -0.16164430426076593,
+        -0.026215596630259567
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.13349751873970025,
+      "ci95_bootstrap": [
+        -0.19435244317950742,
+        -0.0734381614497461
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3851781787690614,
+      "ci95_bootstrap": [
+        0.3389419766296954,
+        0.42885227866437636
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3451025383472214,
+      "ci95_bootstrap": [
+        0.3106159548208991,
+        0.38053447078971975
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04007564042184,
+      "ci95_bootstrap": [
+        -0.09748429490393977,
+        0.020021391810081425
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.47946114226173236,
+      "ci95_bootstrap": [
+        -0.5315791406028866,
+        -0.431981886785763
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09459709199307394,
+      "ci95_bootstrap": [
+        -0.1607725678587041,
+        -0.026902978816469008
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.116457622877049,
+      "ci95_bootstrap": [
+        -0.16887610217773008,
+        -0.06151629873036604
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3848640502686584,
+      "ci95_bootstrap": [
+        0.3383083805521465,
+        0.42910853481757055
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.36300351938468334,
+      "ci95_bootstrap": [
+        0.3209922548102036,
+        0.4022847417509499
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.021860530883975045,
+      "ci95_bootstrap": [
+        -0.07974700298561012,
+        0.03522043685707906
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.48013987529340657,
+      "ci95_bootstrap": [
+        -0.5305639019988065,
+        -0.4331687842904654
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09042199077849905,
+      "ci95_bootstrap": [
+        -0.15959004855289263,
+        -0.021080246636717027
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.11593651051847534,
+      "ci95_bootstrap": [
+        -0.1713876754947598,
+        -0.056067575503307356
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.38971788451490746,
+      "ci95_bootstrap": [
+        0.34661625861316686,
+        0.43451675520282085
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3642033647749312,
+      "ci95_bootstrap": [
+        0.3216680929407607,
+        0.40652235143126303
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.025514519739976295,
+      "ci95_bootstrap": [
+        -0.08167209760882195,
+        0.03306281623339943
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.46038022898281045,
+      "ci95_bootstrap": [
+        -0.5020529196811321,
+        -0.41566427337374406
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09238945530471468,
+      "ci95_bootstrap": [
+        -0.1577751865874701,
+        -0.033522857912572965
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.015679411949724942,
+      "ci95_bootstrap": [
+        -0.05908197868718909,
+        0.02983085545563714
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3679907736780958,
+      "ci95_bootstrap": [
+        0.3258728688099395,
+        0.4075786222176736
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4447008170330855,
+      "ci95_bootstrap": [
+        0.41812542188385843,
+        0.47060801586967477
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.07671004335498972,
+      "ci95_bootstrap": [
+        0.03736016600837641,
+        0.1175933669045129
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.4659510987380774,
+      "ci95_bootstrap": [
+        -0.5112488994829154,
+        -0.42097912768841556
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09238945530471468,
+      "ci95_bootstrap": [
+        -0.15407020953468045,
+        -0.03225369577626049
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.012979291749604745,
+      "ci95_bootstrap": [
+        -0.057567544009674995,
+        0.03605278457919403
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3735616434333627,
+      "ci95_bootstrap": [
+        0.3348150928302092,
+        0.4113271391448266
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4529718069884726,
+      "ci95_bootstrap": [
+        0.4250701679054534,
+        0.4806469618444144
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.07941016355510992,
+      "ci95_bootstrap": [
+        0.03827949067081128,
+        0.12029331365048784
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.46381028209794106,
+      "ci95_bootstrap": [
+        -0.5086082479431082,
+        -0.41898557504553546
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.09164651990808866,
+      "ci95_bootstrap": [
+        -0.15083088914558754,
+        -0.03117206911769843
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.01272471649502949,
+      "ci95_bootstrap": [
+        -0.05790058916261311,
+        0.03588878041327258
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3721637621898523,
+      "ci95_bootstrap": [
+        0.3359089488360546,
+        0.40737190729142664
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4510855656029115,
+      "ci95_bootstrap": [
+        0.42053695697065613,
+        0.4851409410711528
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.07892180341305918,
+      "ci95_bootstrap": [
+        0.03484147026296885,
+        0.12025625320076079
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.45019126093620765,
+      "ci95_bootstrap": [
+        -0.49581159048815726,
+        -0.4019377443564424
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.11513017327113483,
+      "ci95_bootstrap": [
+        -0.16887119458318267,
+        -0.06404183264586055
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.015212110578042974,
+      "ci95_bootstrap": [
+        -0.028298102285497555,
+        0.05688627025087588
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3350610876650728,
+      "ci95_bootstrap": [
+        0.2978217613493796,
+        0.37043528508730283
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.46540337151425054,
+      "ci95_bootstrap": [
+        0.4348607947077307,
+        0.4962729893074987
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.13034228384917781,
+      "ci95_bootstrap": [
+        0.09086873291598518,
+        0.17157249250809495
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.44951335131377973,
+      "ci95_bootstrap": [
+        -0.49526601903030626,
+        -0.4055935716676234
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.11763140921230404,
+      "ci95_bootstrap": [
+        -0.17437209716432256,
+        -0.0622574343661594
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.012971268982362661,
+      "ci95_bootstrap": [
+        -0.03179410593964388,
+        0.05765730732182046
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.33188194210147576,
+      "ci95_bootstrap": [
+        0.2930266426096746,
+        0.3680275181139216
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4624846202961425,
+      "ci95_bootstrap": [
+        0.43348609659555676,
+        0.4911375005018715
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1306026781946667,
+      "ci95_bootstrap": [
+        0.08932264840374333,
+        0.17120237921249867
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.44879536413658166,
+      "ci95_bootstrap": [
+        -0.4943588553813982,
+        -0.400914803869218
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.12318456522543106,
+      "ci95_bootstrap": [
+        -0.17372869183328268,
+        -0.07287774563231657
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00926622371436281,
+      "ci95_bootstrap": [
+        -0.035081857303178074,
+        0.05175352250477267
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.3256107989111505,
+      "ci95_bootstrap": [
+        0.28970137354066355,
+        0.362826190037523
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.45806158785094436,
+      "ci95_bootstrap": [
+        0.4297615089426532,
+        0.4864138508773567
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.13245078893979387,
+      "ci95_bootstrap": [
+        0.09231219363508497,
+        0.17414248702675028
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.44907573244782384,
+      "ci95_bootstrap": [
+        -0.48817886716168357,
+        -0.409108664233351
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.17184827195127889,
+      "ci95_bootstrap": [
+        -0.23192204873961592,
+        -0.11185048985898988
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.016617621744538992,
+      "ci95_bootstrap": [
+        -0.06726994866431621,
+        0.035461053991995645
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.27722746049654495,
+      "ci95_bootstrap": [
+        0.23112641806705256,
+        0.3230534867680277
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4324581107032849,
+      "ci95_bootstrap": [
+        0.39860016046534663,
+        0.46599580755542314
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1552306502067399,
+      "ci95_bootstrap": [
+        0.10706517018687313,
+        0.2036586171962884
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.44942534373240317,
+      "ci95_bootstrap": [
+        -0.4904264471718818,
+        -0.4084480303321764
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.17303349374128268,
+      "ci95_bootstrap": [
+        -0.2305433344446304,
+        -0.11202804493185543
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.006528532488459273,
+      "ci95_bootstrap": [
+        -0.05605507855602345,
+        0.044442445494738754
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.2763918499911203,
+      "ci95_bootstrap": [
+        0.23218626082038124,
+        0.3191147446959738
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4428968112439438,
+      "ci95_bootstrap": [
+        0.40995643220600847,
+        0.47553542522211095
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.16650496125282338,
+      "ci95_bootstrap": [
+        0.11609086460660756,
+        0.21791059557261558
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.45074547880769544,
+      "ci95_bootstrap": [
+        -0.4916823688437216,
+        -0.40983501365907604
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.16669670908934547,
+      "ci95_bootstrap": [
+        -0.22642093856996182,
+        -0.10377918176046866
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.003847905525085486,
+      "ci95_bootstrap": [
+        -0.05708647950740077,
+        0.046693448327524756
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.2840487697183499,
+      "ci95_bootstrap": [
+        0.2420588281319182,
+        0.32615676726138015
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.4468975732826099,
+      "ci95_bootstrap": [
+        0.41382419670388376,
+        0.479502836078279
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 10,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.16284880356426001,
+      "ci95_bootstrap": [
+        0.11712511655366623,
+        0.20950320541142559
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.21525533371213593,
+      "ci95_bootstrap": [
+        -0.2550169680347654,
+        -0.17765546366398519
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04031975415124785,
+      "ci95_bootstrap": [
+        -0.09688742006009361,
+        0.014856495367286438
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.06813040075882765,
+      "ci95_bootstrap": [
+        -0.12364661632387211,
+        -0.015545295748160905
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.17493557956088807,
+      "ci95_bootstrap": [
+        0.1361376517080375,
+        0.21669003580250387
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.14712493295330825,
+      "ci95_bootstrap": [
+        0.11201934278059852,
+        0.187029389542147
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.027810646607579797,
+      "ci95_bootstrap": [
+        -0.06990374478506294,
+        0.013715206964312677
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.21525533371213593,
+      "ci95_bootstrap": [
+        -0.25578765862213615,
+        -0.17919300887537162
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04031975415124785,
+      "ci95_bootstrap": [
+        -0.09542034070553218,
+        0.013009452374369441
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.060234940489797585,
+      "ci95_bootstrap": [
+        -0.11369260927557386,
+        -0.008254044730018666
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.17493557956088807,
+      "ci95_bootstrap": [
+        0.13599258835891936,
+        0.21714901008109527
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1550203932223383,
+      "ci95_bootstrap": [
+        0.1136996380933881,
+        0.19795839206824623
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.01991518633854973,
+      "ci95_bootstrap": [
+        -0.0654598910769969,
+        0.027342747183636773
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.21366803212483435,
+      "ci95_bootstrap": [
+        -0.25475638711043797,
+        -0.1757840441018423
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.036232452563946256,
+      "ci95_bootstrap": [
+        -0.09255362489757399,
+        0.019845004642853444
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.03718933552492354,
+      "ci95_bootstrap": [
+        -0.09861672797315016,
+        0.022081024598084708
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.17743557956088804,
+      "ci95_bootstrap": [
+        0.1385459935688774,
+        0.21946140919269036
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1764786965999108,
+      "ci95_bootstrap": [
+        0.13565445408032314,
+        0.22070179455686006
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0009568829609772751,
+      "ci95_bootstrap": [
+        -0.04630650433519259,
+        0.04334459217557353
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.21048286604959116,
+      "ci95_bootstrap": [
+        -0.24270520312156182,
+        -0.18077132346038438
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.045741811370855874,
+      "ci95_bootstrap": [
+        -0.07943863825829826,
+        -0.011946301925099951
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.005987891718372928,
+      "ci95_bootstrap": [
+        -0.03269135115806206,
+        0.04385424897860058
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1647410546787353,
+      "ci95_bootstrap": [
+        0.13289846200579325,
+        0.19790180015941705
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.21647075776796407,
+      "ci95_bootstrap": [
+        0.18479894351083426,
+        0.24731633434615186
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.05172970308922878,
+      "ci95_bootstrap": [
+        0.011934047224529416,
+        0.09107220916124599
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.21048286604959116,
+      "ci95_bootstrap": [
+        -0.2443413712459903,
+        -0.17917528423141793
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04918367183597214,
+      "ci95_bootstrap": [
+        -0.08351011562983883,
+        -0.014506179557415002
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.009816251498860359,
+      "ci95_bootstrap": [
+        -0.024141593159106967,
+        0.042001950414668594
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.16129919421361905,
+      "ci95_bootstrap": [
+        0.130387248990793,
+        0.19437894460291322
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.22029911754845155,
+      "ci95_bootstrap": [
+        0.19297993453586534,
+        0.24830253195401145
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0589999233348325,
+      "ci95_bootstrap": [
+        0.023316811653602103,
+        0.09642615629831204
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.2094727650394902,
+      "ci95_bootstrap": [
+        -0.24140123672555786,
+        -0.1799267112901653
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04732219997450029,
+      "ci95_bootstrap": [
+        -0.08238780004869488,
+        -0.011916258244620226
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.01504045182548523,
+      "ci95_bootstrap": [
+        -0.024795115326004553,
+        0.05427121656281218
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.16215056506498987,
+      "ci95_bootstrap": [
+        0.13042544050332663,
+        0.19439907506122228
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.22451321686497538,
+      "ci95_bootstrap": [
+        0.19519056975028634,
+        0.2531745194446916
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.062362651799985507,
+      "ci95_bootstrap": [
+        0.019805524713055734,
+        0.10571178889289425
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.20187021529040186,
+      "ci95_bootstrap": [
+        -0.22546604510682847,
+        -0.17792300280160994
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0773041543551336,
+      "ci95_bootstrap": [
+        -0.10289211183988646,
+        -0.051103620447386845
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.02656130132331503,
+      "ci95_bootstrap": [
+        0.004947398946859439,
+        0.04744410543620535
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.12456606093526826,
+      "ci95_bootstrap": [
+        0.10214027937758077,
+        0.1478511008588783
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.2284315166137169,
+      "ci95_bootstrap": [
+        0.20978271563005915,
+        0.24685071507222103
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10386545567844864,
+      "ci95_bootstrap": [
+        0.07979626146671272,
+        0.12645750335016825
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.20187021529040186,
+      "ci95_bootstrap": [
+        -0.2254517333770292,
+        -0.17760069208895646
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.07522031227129153,
+      "ci95_bootstrap": [
+        -0.10126333161991435,
+        -0.04785311842290104
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.025953454665066947,
+      "ci95_bootstrap": [
+        0.003531644731903159,
+        0.049248007190277644
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.12664990301911036,
+      "ci95_bootstrap": [
+        0.10394765142400696,
+        0.14996285141213717
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.22782366995546885,
+      "ci95_bootstrap": [
+        0.20768690404635465,
+        0.24709819281139142
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10117376693635848,
+      "ci95_bootstrap": [
+        0.0751475478131454,
+        0.12549626353311663
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.2001820810203004,
+      "ci95_bootstrap": [
+        -0.22383217928489058,
+        -0.17535955578419615
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.07583050691242217,
+      "ci95_bootstrap": [
+        -0.10343918626500631,
+        -0.04866595706415623
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.03621623737041411,
+      "ci95_bootstrap": [
+        0.00813365154930236,
+        0.06527906313459322
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1243515741078782,
+      "ci95_bootstrap": [
+        0.10191227431987922,
+        0.14820443460172902
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.2363983183907145,
+      "ci95_bootstrap": [
+        0.21715699955690865,
+        0.2548532919451832
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.1120467442828363,
+      "ci95_bootstrap": [
+        0.08201509829116438,
+        0.14081893966560755
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.1895959568539455,
+      "ci95_bootstrap": [
+        -0.2132954229053447,
+        -0.1647210832079932
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0869320133948316,
+      "ci95_bootstrap": [
+        -0.12016175931419167,
+        -0.05195258955499484
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.07721109478641021,
+      "ci95_bootstrap": [
+        0.04036873522793888,
+        0.11550518527175992
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10266394345911391,
+      "ci95_bootstrap": [
+        0.08412228052384166,
+        0.12354606137000584
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.26680705164035573,
+      "ci95_bootstrap": [
+        0.24078969282669602,
+        0.29610522161897723
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.16414310818124184,
+      "ci95_bootstrap": [
+        0.13766734671462544,
+        0.19163427752557394
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.1904398387104856,
+      "ci95_bootstrap": [
+        -0.21510893396320174,
+        -0.16563756027460208
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08777589525137168,
+      "ci95_bootstrap": [
+        -0.12271712518551055,
+        -0.05164874564882078
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0696163602043236,
+      "ci95_bootstrap": [
+        0.0326230743299662,
+        0.10829742584875462
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10266394345911391,
+      "ci95_bootstrap": [
+        0.084175471592335,
+        0.12255471117091103
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.2600561989148092,
+      "ci95_bootstrap": [
+        0.2329316120111677,
+        0.28639128140508063
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.15739225545569532,
+      "ci95_bootstrap": [
+        0.1321188988703331,
+        0.18395376695884175
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.18866744088545617,
+      "ci95_bootstrap": [
+        -0.2134233886478775,
+        -0.16217173710260302
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08932282555147848,
+      "ci95_bootstrap": [
+        -0.1233076569703519,
+        -0.051082098860750824
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.06898314870400782,
+      "ci95_bootstrap": [
+        0.033496207088382926,
+        0.10731177780739447
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.09934461533397772,
+      "ci95_bootstrap": [
+        0.07950677508039333,
+        0.11946882134053138
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.257650589589464,
+      "ci95_bootstrap": [
+        0.2308761797343849,
+        0.2854384831596057
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 25,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.15830597425548631,
+      "ci95_bootstrap": [
+        0.13138088971422726,
+        0.18685242878448138
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.07630059530522805,
+      "ci95_bootstrap": [
+        -0.10347321444591992,
+        -0.051411224711741824
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.009158734781037015,
+      "ci95_bootstrap": [
+        -0.029318056132638354,
+        0.04717594458011126
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.02755466693210669,
+      "ci95_bootstrap": [
+        -0.05766377566990873,
+        0.0038313110950410757
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08545933008626506,
+      "ci95_bootstrap": [
+        0.06126481388265445,
+        0.1100553743384239
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.04874592837312137,
+      "ci95_bootstrap": [
+        0.02696839610600576,
+        0.07302421035754371
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.036713401713143703,
+      "ci95_bootstrap": [
+        -0.0636162620603797,
+        -0.009662081093189166
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.07630059530522805,
+      "ci95_bootstrap": [
+        -0.1023537669036334,
+        -0.05226966446043009
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.009158734781037015,
+      "ci95_bootstrap": [
+        -0.030953909880348223,
+        0.04731337483207604
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0328661147435545,
+      "ci95_bootstrap": [
+        -0.06425687444525781,
+        -0.0001503517409089932
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08545933008626506,
+      "ci95_bootstrap": [
+        0.060788900225161834,
+        0.11052435827846045
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.04343448056167355,
+      "ci95_bootstrap": [
+        0.0231510760803524,
+        0.06637539081289083
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.042024849524591505,
+      "ci95_bootstrap": [
+        -0.06719734692122463,
+        -0.01515814974881022
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.07630059530522805,
+      "ci95_bootstrap": [
+        -0.10394934125758433,
+        -0.051532360657289146
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.009158734781037015,
+      "ci95_bootstrap": [
+        -0.03192073824641746,
+        0.0469224705519126
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.02794093352451363,
+      "ci95_bootstrap": [
+        -0.05868937606940702,
+        0.0028899770966334592
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08545933008626506,
+      "ci95_bootstrap": [
+        0.06227625069289157,
+        0.11028723304845596
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.048359661780714415,
+      "ci95_bootstrap": [
+        0.02707899958228906,
+        0.07234576972734869
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.03709966830555064,
+      "ci95_bootstrap": [
+        -0.06278811735220402,
+        -0.011277858081031418
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08023765753294289,
+      "ci95_bootstrap": [
+        -0.10324716234424755,
+        -0.060309048410509165
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.01477965498556361,
+      "ci95_bootstrap": [
+        -0.044265026885991134,
+        0.013044614350899701
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.01446343078322152,
+      "ci95_bootstrap": [
+        -0.009573137692953013,
+        0.0402637572870364
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0654580025473793,
+      "ci95_bootstrap": [
+        0.04939040600272004,
+        0.08311353742759295
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.09470108831616446,
+      "ci95_bootstrap": [
+        0.07398667320968891,
+        0.11812004304948856
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.02924308576878513,
+      "ci95_bootstrap": [
+        0.003227200952759188,
+        0.05534443468515763
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08023765753294289,
+      "ci95_bootstrap": [
+        -0.10238771800242322,
+        -0.05968005893395052
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013924954130862758,
+      "ci95_bootstrap": [
+        -0.044387278761431684,
+        0.014610270192268581
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.016226482546273284,
+      "ci95_bootstrap": [
+        -0.00759727246836956,
+        0.04176994853513701
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.06631270340208013,
+      "ci95_bootstrap": [
+        0.049759392033968466,
+        0.08466881226661926
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.09646414007921618,
+      "ci95_bootstrap": [
+        0.07570009936919993,
+        0.1186632960623949
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.030151436677136042,
+      "ci95_bootstrap": [
+        0.0054081769860439425,
+        0.05491141190050443
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08023765753294289,
+      "ci95_bootstrap": [
+        -0.10224469373789997,
+        -0.05938747125234713
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.016750390830619098,
+      "ci95_bootstrap": [
+        -0.04538991679562293,
+        0.010337707022361215
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0036714315464548434,
+      "ci95_bootstrap": [
+        -0.02258050013879741,
+        0.03106404493322588
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.06348726670232381,
+      "ci95_bootstrap": [
+        0.048547441299217085,
+        0.07960186474996442
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08390908907939777,
+      "ci95_bootstrap": [
+        0.061896227617119194,
+        0.10880033168980595
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.020421822377073944,
+      "ci95_bootstrap": [
+        -0.005396706112162291,
+        0.04911984497014514
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08973411972110037,
+      "ci95_bootstrap": [
+        -0.10876644987277381,
+        -0.07182206812700558
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.034132381658427996,
+      "ci95_bootstrap": [
+        -0.05751355194802569,
+        -0.010722221561894306
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.022321757027868424,
+      "ci95_bootstrap": [
+        -0.0004491630060349136,
+        0.04606035664842611
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.055601738062672386,
+      "ci95_bootstrap": [
+        0.042793643561165995,
+        0.06847463218468358
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.11205587674896879,
+      "ci95_bootstrap": [
+        0.08939695726261389,
+        0.13638422693719474
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.05645413868629642,
+      "ci95_bootstrap": [
+        0.032799435817774454,
+        0.08173274773563818
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08973411972110037,
+      "ci95_bootstrap": [
+        -0.11015712337602054,
+        -0.07190773840284032
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.03965517226097932,
+      "ci95_bootstrap": [
+        -0.063245321014197,
+        -0.017921086967756784
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.017270069360359377,
+      "ci95_bootstrap": [
+        -0.0054637496271206665,
+        0.04032209911278871
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.050078947460121065,
+      "ci95_bootstrap": [
+        0.03818530165370604,
+        0.062123914800438385
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.10700418908145974,
+      "ci95_bootstrap": [
+        0.08556059797691183,
+        0.13131426813050529
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0569252416213387,
+      "ci95_bootstrap": [
+        0.032340069004665226,
+        0.08305450046904564
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.08973411972110037,
+      "ci95_bootstrap": [
+        -0.10902872167738797,
+        -0.07199834963795528
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.03807592514409779,
+      "ci95_bootstrap": [
+        -0.06094626894670201,
+        -0.016210575142769284
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.02660739131488835,
+      "ci95_bootstrap": [
+        0.0009729749119002147,
+        0.05310331434810477
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.05165819457700258,
+      "ci95_bootstrap": [
+        0.040415325470443686,
+        0.06289856093329939
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.11634151103598872,
+      "ci95_bootstrap": [
+        0.09201786200632683,
+        0.14351294283729119
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.06468331645898613,
+      "ci95_bootstrap": [
+        0.04061784586175725,
+        0.09102433215217876
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0878940831000565,
+      "ci95_bootstrap": [
+        -0.10931305302141667,
+        -0.06847978954583571
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04546919225230688,
+      "ci95_bootstrap": [
+        -0.068158973920509,
+        -0.02527427075974732
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.03977281725281195,
+      "ci95_bootstrap": [
+        0.021393661518776662,
+        0.05683809887876792
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.04242489084774961,
+      "ci95_bootstrap": [
+        0.03267381753314404,
+        0.05236255057640768
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.12766690035286843,
+      "ci95_bootstrap": [
+        0.10755209213710792,
+        0.15010711459244755
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08524200950511882,
+      "ci95_bootstrap": [
+        0.06383877885281942,
+        0.10933292764293483
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0878940831000565,
+      "ci95_bootstrap": [
+        -0.109125192388304,
+        -0.06887409250687307
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04708860395454752,
+      "ci95_bootstrap": [
+        -0.07045855672796188,
+        -0.026493567869612777
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.03774880621032763,
+      "ci95_bootstrap": [
+        0.018746367840910657,
+        0.0552288941719409
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.040805479145508985,
+      "ci95_bootstrap": [
+        0.031887631991178327,
+        0.049645755476989184
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.12564288931038411,
+      "ci95_bootstrap": [
+        0.10517713859571343,
+        0.14633750733878967
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08483741016487513,
+      "ci95_bootstrap": [
+        0.06140319131133929,
+        0.10766477494978555
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0878940831000565,
+      "ci95_bootstrap": [
+        -0.10965779381971268,
+        -0.06935750867766845
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.04747620085377233,
+      "ci95_bootstrap": [
+        -0.07048869361244188,
+        -0.027013303580934872
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.03637241533927691,
+      "ci95_bootstrap": [
+        0.017821427559189713,
+        0.053458259969916384
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.040417882246284176,
+      "ci95_bootstrap": [
+        0.031682285731566485,
+        0.04961467677254713
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.12426649843933339,
+      "ci95_bootstrap": [
+        0.10556115950454804,
+        0.14464459205715263
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 50,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.08384861619304922,
+      "ci95_bootstrap": [
+        0.06459438212981829,
+        0.1050566381854435
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.014305555555555556,
+      "ci95_bootstrap": [
+        -0.024444444444444446,
+        -0.0054166666666666695
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00020299145299144857,
+      "ci95_bootstrap": [
+        -0.01700049603174603,
+        0.0175100351037851
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013115079365079366,
+      "ci95_bootstrap": [
+        -0.024027777777777773,
+        -0.003452380952380955
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.014508547008547005,
+      "ci95_bootstrap": [
+        0.0031746031746031746,
+        0.027192460317460317
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00119047619047619,
+      "ci95_bootstrap": [
+        0.0,
+        0.00357142857142857
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013318070818070816,
+      "ci95_bootstrap": [
+        -0.025589133089133083,
+        -0.0025641025641025624
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.014305555555555556,
+      "ci95_bootstrap": [
+        -0.024027777777777776,
+        -0.005416666666666666
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00020299145299144857,
+      "ci95_bootstrap": [
+        -0.016741949023199035,
+        0.017842261904761902
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013115079365079366,
+      "ci95_bootstrap": [
+        -0.02430555555555556,
+        -0.0035119047619047643
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.014508547008547005,
+      "ci95_bootstrap": [
+        0.0031746031746031746,
+        0.027248626373626378
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00119047619047619,
+      "ci95_bootstrap": [
+        0.0,
+        0.00357142857142857
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013318070818070816,
+      "ci95_bootstrap": [
+        -0.025635912698412696,
+        -0.0025641025641025624
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.014305555555555556,
+      "ci95_bootstrap": [
+        -0.024861111111111108,
+        -0.005416666666666666
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0020548433048433014,
+      "ci95_bootstrap": [
+        -0.014676421957671965,
+        0.020012019230769233
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.011665804002760526,
+      "ci95_bootstrap": [
+        -0.022796928916494135,
+        -0.00104986197377502
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.016360398860398858,
+      "ci95_bootstrap": [
+        0.004945054945054942,
+        0.0299348544973545
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0026397515527950294,
+      "ci95_bootstrap": [
+        0.0,
+        0.006728778467908899
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013720647307603829,
+      "ci95_bootstrap": [
+        -0.026638456450956447,
+        -0.002498274672187717
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013425155823411642,
+      "ci95_bootstrap": [
+        -0.021119342196740453,
+        -0.006867410609416427
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0004642891327673963,
+      "ci95_bootstrap": [
+        -0.009006837767707339,
+        0.00821597818948363
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -4.865808729139406e-05,
+      "ci95_bootstrap": [
+        -0.009445239128979018,
+        0.009782136862057653
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.012960866690644246,
+      "ci95_bootstrap": [
+        0.005595954178297458,
+        0.021714516549766808
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.013376497736120247,
+      "ci95_bootstrap": [
+        0.005726055473443408,
+        0.022738745427698916
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0004156310454760022,
+      "ci95_bootstrap": [
+        -0.009907551470051476,
+        0.012105936614657573
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013425155823411642,
+      "ci95_bootstrap": [
+        -0.02143255292710235,
+        -0.006822968336049731
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0020515907200689817,
+      "ci95_bootstrap": [
+        -0.010680743446368456,
+        0.0068641050223930715
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0056842920360362275,
+      "ci95_bootstrap": [
+        -0.013663009944259938,
+        0.002328811624596493
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.011373565103342661,
+      "ci95_bootstrap": [
+        0.0054034102036819446,
+        0.017987806509008494
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.007740863787375415,
+      "ci95_bootstrap": [
+        0.0015343915343915364,
+        0.01567737172388335
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.003632701315967246,
+      "ci95_bootstrap": [
+        -0.012061806118207794,
+        0.005925777095930025
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013425155823411642,
+      "ci95_bootstrap": [
+        -0.021101266267327317,
+        -0.006867622258247261
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.002746035164513427,
+      "ci95_bootstrap": [
+        -0.011555762725599689,
+        0.006868796436051867
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0047615541365541355,
+      "ci95_bootstrap": [
+        -0.014587402478027478,
+        0.005072134462759466
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.010679120658898216,
+      "ci95_bootstrap": [
+        0.004744429717887759,
+        0.01749777630717975
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.008663601686857507,
+      "ci95_bootstrap": [
+        0.002328042328042331,
+        0.016782990480664905
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0020155189720407083,
+      "ci95_bootstrap": [
+        -0.01063952548735158,
+        0.006799256299256313
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.012633304570964787,
+      "ci95_bootstrap": [
+        -0.020623142669447467,
+        -0.0061639627816104815
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.002384258779691391,
+      "ci95_bootstrap": [
+        -0.012161283150163064,
+        0.00724713719666672
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0022959030875186618,
+      "ci95_bootstrap": [
+        -0.007035961278014166,
+        0.011781602371725885
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.010249045791273396,
+      "ci95_bootstrap": [
+        0.0049731878577933914,
+        0.01656967058750729
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.01492920765848345,
+      "ci95_bootstrap": [
+        0.008081929051587822,
+        0.022426675277382527
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.004680161867210053,
+      "ci95_bootstrap": [
+        -0.004067141337111892,
+        0.013310698001497456
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.012633304570964787,
+      "ci95_bootstrap": [
+        -0.02074422377935318,
+        -0.006097505778120182
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.002384258779691391,
+      "ci95_bootstrap": [
+        -0.012246227981716767,
+        0.006805487463293743
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0027972011065471795,
+      "ci95_bootstrap": [
+        -0.00596457481070314,
+        0.011947465701836264
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.010249045791273396,
+      "ci95_bootstrap": [
+        0.004658626804597763,
+        0.01676480383687703
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.015430505677511967,
+      "ci95_bootstrap": [
+        0.008389540347609666,
+        0.02339858471970776
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.005181459886238571,
+      "ci95_bootstrap": [
+        -0.003028642761986333,
+        0.013132054814704268
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.013188860126520345,
+      "ci95_bootstrap": [
+        -0.021487551920828643,
+        -0.006892929864579196
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0029398143352469485,
+      "ci95_bootstrap": [
+        -0.01286728449068962,
+        0.00679798559128861
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.002499004756335125,
+      "ci95_bootstrap": [
+        -0.0061494405903919315,
+        0.010906587297587499
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.010249045791273396,
+      "ci95_bootstrap": [
+        0.00472191531733441,
+        0.016776239810262866
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.01568786488285547,
+      "ci95_bootstrap": [
+        0.008490152588064752,
+        0.0237160034616576
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.005438819091582074,
+      "ci95_bootstrap": [
+        -0.0021863823050806584,
+        0.013298584689554444
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.010339399572363628,
+      "ci95_bootstrap": [
+        -0.014220594876492205,
+        -0.00666913922639262
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0010606174394814114,
+      "ci95_bootstrap": [
+        -0.004883705241002576,
+        0.0067907785716624655
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.005742180671719536,
+      "ci95_bootstrap": [
+        -0.0016641959688649237,
+        0.013371904492560472
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.011400017011845039,
+      "ci95_bootstrap": [
+        0.006822440157871984,
+        0.01635496458942366
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.016081580244083165,
+      "ci95_bootstrap": [
+        0.009019667370160196,
+        0.023791713129411498
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.004681563232238125,
+      "ci95_bootstrap": [
+        -0.00199024080713151,
+        0.011267578307313933
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.010339399572363628,
+      "ci95_bootstrap": [
+        -0.01419560266692585,
+        -0.006533417524894706
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0010606174394814114,
+      "ci95_bootstrap": [
+        -0.004850171384479433,
+        0.0070737665190577555
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.006924385740098674,
+      "ci95_bootstrap": [
+        -1.9078290688881273e-05,
+        0.014342877980698415
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.011400017011845039,
+      "ci95_bootstrap": [
+        0.006944407848122329,
+        0.016334536978415366
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.017263785312462303,
+      "ci95_bootstrap": [
+        0.01026384816966761,
+        0.025051454071835316
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.005863768300617263,
+      "ci95_bootstrap": [
+        -0.0011039556493003938,
+        0.012800650711205506
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.010789850022814077,
+      "ci95_bootstrap": [
+        -0.01477401165096752,
+        -0.007071052012724136
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0010117734147337706,
+      "ci95_bootstrap": [
+        -0.005050955723766267,
+        0.007316267413717558
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.006901415408167651,
+      "ci95_bootstrap": [
+        -0.00022373771188916345,
+        0.013831818776123536
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.011801623437547848,
+      "ci95_bootstrap": [
+        0.00728279885750557,
+        0.016853354481921597
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.017691265430981727,
+      "ci95_bootstrap": [
+        0.010753918721717382,
+        0.025182191624379045
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 100,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0058896419934338804,
+      "ci95_bootstrap": [
+        -0.0009597252260107004,
+        0.012622812341796956
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.001587301587301589,
+      "ci95_bootstrap": [
+        -0.0047619047619047675,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.001587301587301589,
+      "ci95_bootstrap": [
+        -0.0047619047619047675,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.001587301587301589,
+      "ci95_bootstrap": [
+        0.0,
+        0.0047619047619047675
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.05,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.001587301587301589,
+      "ci95_bootstrap": [
+        -0.0047619047619047675,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0007936507936507945,
+      "ci95_bootstrap": [
+        -0.0023809523809523838,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.1,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0016558441558441586,
+      "ci95_bootstrap": [
+        -0.0037770562770562824,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0011093960684124642,
+      "ci95_bootstrap": [
+        -0.003351370851370857,
+        0.0010763962813143144
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0016558441558441586,
+      "ci95_bootstrap": [
+        -0.003816738816738822,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0005464480874316946,
+      "ci95_bootstrap": [
+        0.0,
+        0.0016393442622950837
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0005464480874316946,
+      "ci95_bootstrap": [
+        -0.0016393442622950837,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0016558441558441586,
+      "ci95_bootstrap": [
+        -0.0037773268398268453,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0011093960684124642,
+      "ci95_bootstrap": [
+        -0.00336219336219337,
+        0.0010441061670569869
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0016558441558441586,
+      "ci95_bootstrap": [
+        -0.00372655122655123,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0005464480874316946,
+      "ci95_bootstrap": [
+        0.0,
+        0.0016393442622950837
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0005464480874316946,
+      "ci95_bootstrap": [
+        -0.0016393442622950837,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0016558441558441586,
+      "ci95_bootstrap": [
+        -0.003625811688311687,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0011093960684124642,
+      "ci95_bootstrap": [
+        -0.003311688311688317,
+        0.0010837887067395265
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0011796536796536842,
+      "ci95_bootstrap": [
+        -0.00336219336219337,
+        0.0008730158730158662
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0005464480874316946,
+      "ci95_bootstrap": [
+        0.0,
+        0.0016393442622950837
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0004761904761904745,
+      "ci95_bootstrap": [
+        0.0,
+        0.0014285714285714236
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.15,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -7.02576112412201e-05,
+      "ci95_bootstrap": [
+        -0.0016393442622950837,
+        0.0014285714285714236
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0012496512496512477,
+      "ci95_bootstrap": [
+        -0.002799002799002792,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.000848044823948435,
+      "ci95_bootstrap": [
+        -0.002548746298746297,
+        0.0007719188442080045
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0012496512496512477,
+      "ci95_bootstrap": [
+        -0.0027814527814527755,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00040160642570281256,
+      "ci95_bootstrap": [
+        0.0,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.00040160642570281256,
+      "ci95_bootstrap": [
+        -0.0012048192771084375,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0012496512496512477,
+      "ci95_bootstrap": [
+        -0.002848052848052844,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.000848044823948435,
+      "ci95_bootstrap": [
+        -0.0024997412497412457,
+        0.0007719188442080045
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.000848044823948435,
+      "ci95_bootstrap": [
+        -0.002530601657107676,
+        0.0007896748860604356
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00040160642570281256,
+      "ci95_bootstrap": [
+        0.0,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00040160642570281256,
+      "ci95_bootstrap": [
+        0.0,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.005,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        -0.0012048192771084375,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "greedy",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.0012496512496512477,
+      "ci95_bootstrap": [
+        -0.002781891531891526,
+        0.0
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.000848044823948435,
+      "ci95_bootstrap": [
+        -0.0025347461341437183,
+        0.0007719188442080045
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "dqn",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": -0.000848044823948435,
+      "ci95_bootstrap": [
+        -0.0025168525168525117,
+        0.0008032128514056251
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "hybrid",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00040160642570281256,
+      "ci95_bootstrap": [
+        0.0,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "greedy",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.00040160642570281256,
+      "ci95_bootstrap": [
+        0.0,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    },
+    {
+      "agents": 200,
+      "density": 0.2,
+      "failure_probability": 0.02,
+      "policy_a": "hybrid",
+      "policy_b": "pheromone",
+      "difference_definition": "completion(policy_a) - completion(policy_b)",
+      "mean_paired_difference": 0.0,
+      "ci95_bootstrap": [
+        -0.0012048192771084375,
+        0.0012048192771084375
+      ],
+      "n_pairs": 30
+    }
+  ]
+}
